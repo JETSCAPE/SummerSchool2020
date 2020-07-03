@@ -1,0 +1,74 @@
+<?xml version="1.0"?>
+
+<jetscape>
+    <!-- General settings -->
+    <nEvents> 1 </nEvents>
+    <setReuseHydro> true </setReuseHydro>
+    <nReuseHydro> 1 </nReuseHydro>
+    <JetScapeWriterAscii> on </JetScapeWriterAscii>
+
+    <Random>
+      <seed>23</seed>
+    </Random>
+
+    <!-- Inital State Module  -->
+    <IS>
+        <!-- x range [-grid_max_x, grid_max_x] -->
+        <!-- y range [-grid_max_y, grid_max_y]-->
+        <!-- longitudinal range [-grid_max_z, grid_max_z]-->
+        <!-- in units of [fm] -->
+        <grid_max_x> 12 </grid_max_x>
+        <grid_max_y> 12 </grid_max_y>
+        <grid_max_z> 0.0 </grid_max_z>
+        <grid_step_x> 0.2 </grid_step_x>
+        <grid_step_y> 0.2 </grid_step_y>
+        <grid_step_z> 0.2 </grid_step_z>
+
+        <!-- Initial condition -->
+        <Trento>
+            <PhysicsInputs  projectile='Pb'
+                    target='Pb'
+                    sqrts='5020'
+                    cross-section='6.7'
+                    normalization='13.9'>
+            </PhysicsInputs>
+            <CutInputs  centrality-low='20'
+                  centrality-high='30'>
+            </CutInputs>
+            <TransInputs  reduced-thickness='0.0'
+                    fluctuation="1.2"
+                    nucleon-width="0.9"
+                    nucleon-min-dist="1.2">
+            </TransInputs>
+            <LongiInputs  mean-coeff="1.0"
+                    std-coeff="3.0"
+                    skew-coeff="0.0"
+                    skew-type="1"
+                    jacobian="0.8">
+            </LongiInputs>
+        </Trento>
+    </IS>
+
+    <!--Preequilibrium Dynamics Module -->
+    <Preequilibrium>
+        <NullPreDynamics> </NullPreDynamics>
+    </Preequilibrium>
+
+    <!-- Hydro  Module  -->
+    <Hydro>
+        <MUSIC>
+            <name>MUSIC</name>
+            <MUSIC_input_file>../examples/test_music_files/music_input</MUSIC_input_file>
+            <output_evolution_to_file>1</output_evolution_to_file>
+            <shear_viscosity_eta_over_s>0.15</shear_viscosity_eta_over_s>
+            <temperature_dependent_bulk_viscosity>0</temperature_dependent_bulk_viscosity>
+            <Include_second_order_terms>1</Include_second_order_terms>
+            <freezeout_temperature>0.150</freezeout_temperature>
+        </MUSIC>
+    </Hydro>
+
+    <!-- Particlization Module  -->
+    <SoftParticlization>
+        <iSS> </iSS>
+    </SoftParticlization>
+</jetscape>
