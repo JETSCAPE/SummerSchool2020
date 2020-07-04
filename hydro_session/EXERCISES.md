@@ -14,10 +14,10 @@ with two different shear viscosity
 2. Produce animation for the temperature and flow velocity profiles in the
 transverse plane
 
-Step 1. Pick your favorate collision system and generage hydrodynamic
+    Step 1. Pick your favorate collision system and generage hydrodynamic
 evolution file.
 
-Step 2. Modify the Jupyter notebook to read in hydrodynamic evolution file
+    Step 2. Modify the Jupyter notebook to read in hydrodynamic evolution file
 and produce animation for energy density and flow velocity.
 
 3. [Bonus] Compute particle spectra and flow anisotropic flow Qn vectors
