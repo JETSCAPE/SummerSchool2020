@@ -2,13 +2,13 @@
 
 1. Study the viscous effects on hydrodynamic evolution
 
-Simulate a Pb+Pb collision in 20-30% centrality at 5.02 TeV. In order to
+    Simulate a Pb+Pb collision in 20-30% centrality at 5.02 TeV. In order to
 compare simulations with different viscosity, we need to fixed the
 random seed. You can choose your favorate number for the seed. (42?)
 
-* Compare the averaged temperature evolution with and without bulk viscosity
-* Compare the development of averaged radial with and without bulk viscosity
-* Compare the development of flow anisotropy as a function of proper time
+    * Compare the averaged temperature evolution with and without bulk viscosity
+    * Compare the development of averaged radial with and without bulk viscosity
+    * Compare the development of flow anisotropy as a function of proper time
 with two different shear viscosity
 
 2. Produce animation for the temperature and flow velocity profiles in the
