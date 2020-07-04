@@ -138,9 +138,9 @@ cd JETSCAPE/build
 This should take a couple minutes to run, and will print out a variety of information to stdout.
 Once done, it will produce a HepMC file test_out.hepmc in the same directory -- success!
 
-## (4) Download ROOT
+## (4) Install ROOT
 
 We will also make use of GUI interactions from time to time. 
 This is done most easily directly from your laptop (i.e. not via docker).
-Therefore, you should make sure you have a working installation of ROOT on your laptop: https://root.cern/install/
+Therefore, you should make sure you have a working installation of ROOT on your laptop: https://root.cern/install/.
 It is typically easiest to install ROOT via one of the package managers (for macOS and linux), or else from the pre-compiled binaries.
