@@ -3,7 +3,7 @@
 Add your name to the [table](https://docs.google.com/spreadsheets/d/1f1M4vro1lFZnp80Dy0bE_XjYxMQid9oG9BgEMiO10-o/edit#gid=0) to mark your progress.
 Then follow the steps below.
 
-<details><summary> 1. What is SMASH </summary>
+<details><summary><b> 1. What is SMASH </b></summary>
 <p>
 
 SMASH is a hadronic transport code. In JETSCAPE it simulates multiple hadron-hadron scatterings in the final dilute stage of the fireball evolution.
@@ -19,7 +19,7 @@ to create similar visualizations, configure SMASH and analyze its output. All th
 
 
 
-<details><summary> <b> 2. Making sure prequisites are ready </b> </summary>
+<details><summary><b> 2. Making sure prequisites are ready </b></summary>
 <p>
 
 I assume that you have followed the [general school instructions](https://github.com/JETSCAPE/SummerSchool2020/blob/master/README.md) and have
@@ -88,7 +88,7 @@ and proceed further. Paraview is nice to have, but not critical for us.
 
 
 
-<details><summary> 3. Installing SMASH in docker environment </summary>
+<details><summary><b> 3. Installing SMASH in docker environment </b></summary>
 <p>
 
 Installing SMASH:
