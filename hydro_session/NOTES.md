@@ -41,10 +41,35 @@ run JETSCAPE with
 
 ## Study hydrodynamic evolution
 
+### Physics Background
+
+The JETSCAPE framework employs the Trento model to generate event-by-event
+initial energy density profile. The energy density profile is passed to the
+hydrodynamics module (MUSIC), which will evolve the collision system from a
+hot QGP phase to hadron gas phase. Optionally, pre-equilibrium dynamics
+modeled by free-streaming can be included between the Trento and hydrodynamics.
+In the dilute hadronic phase, fluid cells will convert to individual
+hadrons, which is denoted as the particlization. The produced hadrons can be
+feed to a hadronic transport model which accounts for scattering processes
+among hadrons and decays of excited resonance states.
+
+
+### Play with Parameters
+
+- Type of collision system
+    * Collision Energy
+    * Colliding Nuclei
+    * Centrality
+- QGP viscosity
+    * Specific shear viscosity
+    * Specific bulk viscosity
+
+
 ### Averaged temperature and flow velocity evoltion
 
 
 ### Animation of energy density evolution
+
 
 
 ## Produce hadrons from hydrodynamics
