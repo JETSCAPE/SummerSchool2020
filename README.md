@@ -27,6 +27,14 @@ git clone https://github.com/JETSCAPE/SummerSchool2020.git
 git clone https://github.com/jdmulligan/JETSCAPE-analysis.git
 ```
 
+Additionally, download a few external physics packages:
+```
+cd JETSCAPE/external_packages
+./get_music.sh
+./get_iSS.sh
+./get_freestream-milne.sh
+```
+
 ## (2) Install docker
 
 Docker is a software tool that allows one to deploy an application in a portable environment. 
@@ -65,6 +73,8 @@ or in the docker container, as appropriate &mdash; otherwise it will not work.
     Log out and log back in.
     
 For **Windows**, please follow the analogous instructions: https://docs.docker.com/install/
+
+Please note that if you have an older OS, you may need to download an older version of docker.
 
 ### Download the JETSCAPE docker container
 
