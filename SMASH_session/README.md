@@ -187,7 +187,7 @@ Prints the list of all SMASH command line options
   print out particles in the middle of the simulation, it will do so every 10.0 fm/c.
   By default SMASH will print out only particles in the end of the simulation.
   To make it actually print out particles every 10 fm/c we need to supply our config with
-  an additional option.
+  an additional `Only_Final: False` option.
 
   ```
     Output:
@@ -201,8 +201,8 @@ Prints the list of all SMASH command line options
   By default SMASH output will be in the folders `data/0`, `data/1`, etc.
   Open the latest `data/?` folder and look at the files there.
   There is config.yaml there, it is just a full copy of SMASH configuration
-  to keep record of what was done. And there is a `particle_lists.oscar` file.
-  It contains the particles SMASH generated. Open it and you should see something like this:
+  to keep record of what was done. And there is a `particle_lists.oscar` file. This is the one we want to look at.
+  It contains the particles that SMASH generated. Open it and you should see something like this:
 
   ```
    #!OSCAR2013 particle_lists t x y z mass p0 px py pz pdg ID charge
@@ -218,7 +218,8 @@ Prints the list of all SMASH command line options
   You can analyse these results already using your favourite way to write scripts, but at this tutorial I want to show some
   convenient approaches to perform quick analysis without writing code.
   For this we actually want output in some different formats: Root and VTK.
-  We will use Root output for analysis and VTK output for visualization. Let's add them to configuration:
+  We will use Root output for analysis and VTK output for visualization. Let's add them to configuration.
+  Let's also ask for as much information as possible to be written out (`Extended: True`).
 
   ```
     Output:
@@ -267,7 +268,7 @@ Prints the list of all SMASH command line options
 
   Now use the green `Next Frame` and `Previous Frame` buttons on the top to play the movie.
 
-  Challenge 1
+  ### Challenge 1
 
   Experiment with paraview capabilities. You can change the color of spheres depending on their momenta,
   particle type, etc. You can add arrows to particles to show their momenta.
@@ -305,7 +306,59 @@ In root environment type
   new TBrowser
 ```
 
-This should open a browser. Use it to open the Root file you generated previously from SMASH simulation.
+This should open a browser. Use it to open the Root file `Particles.root` you generated previously from SMASH simulation.
+In the left panel of the browser you should see a tree called `particles`. Double-click on it and you will see many
+leaves. Double-click on a leaf shows a histogram. In this way you can see a distribution of x, y, z coordinates,
+times of output, particle energies p0, and momenta px, py, pz.
 
+Let's do something more practical. Let's generate 50 events (set this yourself in the configuration)
+and compare pion to proton rapidity distributions. Open the newly generated `Particles.root` in your TBrowser.
+In the `Command(local)` panel enter:
+
+```
+  particles->Draw("0.5 * log((p0-pz)/(p0+pz))","pdgcode == 2212", "E");
+```
+
+Now left-click on the histogram to update it. Here
+ - `particles` is the name of the tree
+ - `0.5 * log((p0-pz)/(p0+pz))` is the first parameter of the [Draw](https://root.cern.ch/root/html524/TTree.html#TTree:Draw) function.\
+    It is a variable to be histogrammed. As you see, ROOT allows to put formulas there,
+    which use leaves like `p0` and `pz`.
+ - `pdgcode == 2212` is the second parameter of the [Draw](https://root.cern.ch/root/html524/TTree.html#TTree:Draw) function. It defines
+   a cut. Here we cut on particle type, `2212` is a [PDG code](http://pdg.lbl.gov/2019/reviews/rpp2019-rev-monte-carlo-numbering.pdf) of protons.
+   It is possible to combine cuts, for example `pdgcode == 2212 && sqrt(px*px + py*py) > 0.2 && t == 200.0`.
+ - `E` is the third parameter of [Draw](https://root.cern.ch/root/html524/TTree.html#TTree:Draw). It is a plotting option that
+   asks ROOT to show error bars.
+
+Let's now plot a rapidity distribution for pions (plotting option `same` puts this histogram above the previous one):
+
+```
+  particles->Draw("0.5 * log((p0-pz)/(p0+pz))","pdgcode == 211 || pdgcode == 111 || pdgcode == -211", "E same");
+```
+
+Now both proton and pion histograms have the same color and you can't distinguish them. Right-click on the points and change the color:
+
+```
+  Right-click -> SetLineAttributes
+```
+
+Now you have an ugly, but very quick and functional way to analyze SMASH output. Let's look at particles in spatial coordinates.
+You cannot do it in experiment, but it is easy in SMASH:
+
+```
+  particles->Draw("x:y:z","pdgcode == 2212");
+
+  particles->Draw("x:y","t==20");
+  particles->Draw("x:y","t==30");
+  particles->Draw("x:y","t==40");
+```
+
+
+</p>
+</details>
+
+
+<details><summary><b> 7. Observe chemical and kinetic freeze-out </b></summary>
+<p>
 </p>
 </details>
