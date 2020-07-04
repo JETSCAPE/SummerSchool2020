@@ -66,6 +66,8 @@ or in the docker container, as appropriate &mdash; otherwise it will not work.
     
 For **Windows**, please follow the analogous instructions: https://docs.docker.com/install/
 
+Please note that if you have an older OS, you may need to download an older version of docker.
+
 ### Download the JETSCAPE docker container
 
 The docker container will contain only the pre-requisite environment to build JETSCAPE, but will not actually contain JETSCAPE itself. 
