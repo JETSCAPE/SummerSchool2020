@@ -3,7 +3,7 @@
 Add your name to the [table](https://docs.google.com/spreadsheets/d/1f1M4vro1lFZnp80Dy0bE_XjYxMQid9oG9BgEMiO10-o/edit?usp=sharing) to mark your progress.
 Then follow the steps below.
 
-<details><summary> My *personal* docker cheat sheet </summary>
+<details><summary> My personal docker cheat sheet </summary>
 <p>
 I'm very new with docker, so here I assemble commands that were useful for me:
 ```
