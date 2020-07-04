@@ -1,5 +1,18 @@
 # JETSCAPE Hydrodynamics Session
 
+## Goals
+
+- Understand how to run JETSCAPE with a few default Fluid dynamics modules
+and set/change their relevant parameters, such as transport coefficients
+
+- Using a realistic hydrodynamic module, students will be able to output
+hydrodynamic evolution profile and analyze the evolution of temperature
+and the development of flow velocity with various settings
+
+-Simulate event-by-event bulk dynamics for Au+Au @ 200 GeV and
+Pb+Pb @ 5020 GeV with a realistic hydrodynamics code, such as MUSIC.
+
+
 ## Setup docker container
 
 In this session, we need to launch a docker container that supports jupyter
