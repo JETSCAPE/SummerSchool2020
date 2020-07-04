@@ -5,7 +5,9 @@ Then follow the steps below.
 
 <details><summary> My personal docker cheat sheet </summary>
 <p>
+
 I'm very new with docker, so here I assemble commands that were useful for me:
+
 ```
   docker container ls -a        # List all containers
   docker system prune           # Remove all the stopped containers
@@ -17,6 +19,7 @@ I'm very new with docker, so here I assemble commands that were useful for me:
   # run JETSCAPE container on MAC
   docker run -it -v ~/jetscape-docker:/home/jetscape-user --name myJetscape jetscape/base:v1.4
 ```
+
 </p>
 </details>
 
