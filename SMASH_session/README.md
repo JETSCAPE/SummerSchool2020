@@ -85,7 +85,7 @@ brew install paraview
 sudo apt-get install -y paraview
 ```
 
-With other linux distributives you may use *yum* instead of *apt_get*.
+With other linux distributives you may use *yum* instead of *apt-get*.
 
 </p>
 </details>
@@ -144,18 +144,18 @@ Prints the list of all SMASH command line options
 
 
 
-<details><summary><b> 4. Configuring SMASH input </b></summary>
+<details><summary><b> 4. Configuring SMASH </b></summary>
 <p>
   What SMASH is going to simulate depends on what you ask it.
   By default it simulates a Au+Au collision at 1.23 GeV per nucleon in the lab frame.
-  We want to use SMASH as a hadronic afterburner, so let's configure it accordingly.
+  In the end we want to use SMASH as a hadronic afterburner, so let's learn to configure it.
   You can learn how to do it by yourself from the detailed [SMASH user guide](http://theory.gsi.de/~smash/userguide/1.8/),
   but this tutorial is intended to make your life a bit simpler. So let's go
   step by step.
 
   SMASH is controlled in two ways:
 
-  - By configuration file
+  - By configuration file\
     By default this file is called config.yaml. Let's copy
     it to JETSCAPE_school.yaml and make smash read configuration from it:
 
@@ -164,7 +164,7 @@ Prints the list of all SMASH command line options
       ./smash --inputfile JETSCAPE_school.yaml
     ```
 
-  - By command-line options
+  - By command-line options\
     They can overrule the options in the file. For example,
 
     ```
