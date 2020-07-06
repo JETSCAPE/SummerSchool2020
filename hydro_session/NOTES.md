@@ -78,6 +78,13 @@ among hadrons and decays of excited resonance states.
     * Specific bulk viscosity
 
 
+### Visualization with Jupyter Notebook
+
+Launch jupyter notebook inside the docker contain with the following command,
+```
+jupyter notebook --ip 0.0.0.0 --no-browser > notebook.log 2>&1 &
+```
+
 ### Averaged temperature and flow velocity evoltion
 
 

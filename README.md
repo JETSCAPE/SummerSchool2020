@@ -5,7 +5,7 @@ Please carefully complete **all** of the below instructions by **Friday July 10*
 Due to a large number of participants and the online format, we will have limited capacity to address 
 personal software installation questions during the school — it is therefore imperative to **carefully**
 complete the below steps in advance of the school.
-If you have any issues or questions, please post in the slack channnel [XXXX]().
+If you have any issues or questions, please post on the slack [software channel](https://jetscapeschool2020.slack.com/archives/C016X86CS57).
 
 ## (1) Download school material
 
@@ -25,6 +25,14 @@ Then download several pieces of software from git:
 git clone https://github.com/JETSCAPE/JETSCAPE.git
 git clone https://github.com/JETSCAPE/SummerSchool2020.git
 git clone https://github.com/jdmulligan/JETSCAPE-analysis.git
+```
+
+Additionally, download a few external physics packages:
+```
+cd JETSCAPE/external_packages
+./get_music.sh
+./get_iSS.sh
+./get_freestream-milne.sh
 ```
 
 ## (2) Install docker
