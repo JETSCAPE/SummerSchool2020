@@ -33,6 +33,7 @@ cd JETSCAPE/external_packages
 ./get_music.sh
 ./get_iSS.sh
 ./get_freestream-milne.sh
+./get_smash.sh
 ```
 
 ## (2) Install docker
