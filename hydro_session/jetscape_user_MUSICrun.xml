@@ -58,8 +58,8 @@
     <Hydro>
         <MUSIC>
             <name>MUSIC</name>
-	    <MUSIC_input_file>../examples/test_music_files/music_input</MUSIC_input_file>
-	    <Initial_time_tau_0>0.5</Initial_time_tau_0>
+            <MUSIC_input_file>../examples/test_music_files/music_input</MUSIC_input_file>
+            <Initial_time_tau_0>0.5</Initial_time_tau_0>
             <output_evolution_to_file>1</output_evolution_to_file>
             <shear_viscosity_eta_over_s>0.15</shear_viscosity_eta_over_s>
             <T_dependent_Shear_to_S_ratio>0</T_dependent_Shear_to_S_ratio>
