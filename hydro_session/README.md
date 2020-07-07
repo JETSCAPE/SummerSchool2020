@@ -37,7 +37,7 @@ All the python packages are in the docker container.
 Under Linux, if you encounter an error about `permission denied`,
 you can use `sudo` in front of the docker run command.
 
-## Build and run JETSCAPE with MUSIC, iSS
+## Build and run JETSCAPE with MUSIC and iSS
 
 We will do all of our exercises in the `JETSCAPE/build` directory:
 
