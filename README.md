@@ -60,8 +60,9 @@ or in the docker container, as appropriate &mdash; otherwise it will not work.
 
 1. Install Docker Desktop for Mac: https://docs.docker.com/docker-for-mac/install/
 2. Open Docker, go to Preferences --> Advanced and 
-    - (i) Set CPUs to max that your computer has (`sysctl -n hw.ncpu`),
-    - (ii) Set memory to what you are willing to give Docker (I use 12/16 GB).
+    1. Set CPUs to max - 1 that your computer has (`sysctl -n hw.ncpu`),
+    2. Set memory to what you are willing to give Docker (I use 12 out of 16 GB). It should always be a few GB
+       less than the size of you memory.
 
 #### linux
 
@@ -86,12 +87,12 @@ This will allow us to build and run JETSCAPE inside the docker container, but to
 Create and start the docker container that contains all of the JETSCAPE pre-reqs: 
 
 **macOS:**
-```
+```bash
 docker run -it -v ~/jetscape-docker:/home/jetscape-user --name myJetscape jetscape/base:v1.4
 ```
 
 **linux:**
-```
+```bash
 docker run -it -v ~/jetscape-docker:/home/jetscape-user --name myJetscape --user $(id -u):$(id -g) jetscape/base:v1.4
 ```
 
@@ -127,7 +128,7 @@ so that you can easily execute commands either inside or outside the container, 
 ## (3) Test run of JETSCAPE 
 
 From **inside** the docker container, we can now build JETSCAPE:
-```
+```bash
 cd JETSCAPE
 mkdir build
 cd build
@@ -135,13 +136,13 @@ cmake ..
 make -j4     # Builds using 4 cores; adapt as appropriate
 ```
 
-*That's it!* You are now inside the docker container, with JETSCAPE and all of its prequisites installed. 
+*That's it!* You are now inside the docker container, with JETSCAPE and all of its prerequisites installed. 
 You can run JETSCAPE executables or re-compile code. Moreover, since we set up the jetscape-docker folder to be shared between your 
 host and the docker container, you can do text-editing etc. on your host machine, and then immediately build JETSCAPE in the docker container. 
 Output files are also immediately accessible on your host machine if desired.
 
 To test that everything is working, run an example to generate some pp events:
-```
+```bash
 cd JETSCAPE/build
 ./runJetscape ../config/jetscape_user_PP19.xml
 ```
@@ -153,5 +154,6 @@ Once done, it will produce a HepMC file test_out.hepmc in the same directory -- 
 
 We will also make use of GUI interactions from time to time. 
 This is done most easily directly from your laptop (i.e. not via docker).
-Therefore, you should make sure you have a working installation of ROOT on your laptop: https://root.cern/install/.
-It is typically easiest to install ROOT via one of the package managers (for macOS and linux), or else from the pre-compiled binaries.
+Therefore, you should make sure you have a working installation of ROOT on your laptop:
+https://root.cern/install/. It is typically easiest to install ROOT via one of the package managers (for macOS
+and linux), conda, or else from the pre-compiled binaries.
