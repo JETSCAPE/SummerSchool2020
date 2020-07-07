@@ -54,7 +54,7 @@ make
 Copy the hand-on materials of this session to the build folder,
 
 ```
-cp ../../SummerSchool/hydro_session .
+cp -r ../../SummerSchool/hydro_session .
 ```
 
 Then, run JETSCAPE with the example configuration file,
