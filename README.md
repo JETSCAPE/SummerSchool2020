@@ -5,7 +5,7 @@ Please carefully complete **all** of the below instructions by **Friday July 10*
 Due to a large number of participants and the online format, we will have limited capacity to address 
 personal software installation questions during the school — it is therefore imperative to **carefully**
 complete the below steps in advance of the school.
-If you have any issues or questions, please post on the slack [software channel](https://jetscapeschool2020.slack.com/archives/C016X86CS57).
+If you have any issues or questions, please post on the slack [installation channel](https://jetscapeschool2020.slack.com/archives/C01723YAP17).
 
 ## (1) Download school material
 
