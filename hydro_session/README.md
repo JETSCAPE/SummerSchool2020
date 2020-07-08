@@ -215,7 +215,8 @@ the build folder,
 
 With the produced `hadron_list.dat` file, the users can apply their own
 analysis script to compute particle spectra, mean $p_T$, and
-anisotropic flow coefficients $v_n$.
+anisotropic flow coefficients $v_n$. An example of the analysis code is
+`analyze_particle_spectra_and_vn.ipynb`. 
 
 
 # HOMEWORK
