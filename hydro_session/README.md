@@ -251,8 +251,8 @@ We will select the most impressive ones and post them on the school website.
 
 ## 3. [Bonus] Compute particle spectra and flow anisotropic flow Qn vectors from the event-by-event simulations for one heavy-ion collison system.
 
-To accumlate statistic, you can set `<nEvents>` to 5000 and
-`<nReuseHydro>` to 5000 in the xml file to avoid running 5000 hydrodynamic
+To accumlate statistic, you can set `<nEvents>` to 50 and
+`<nReuseHydro>` to 50 in the xml file to avoid running 50 hydrodynamic
 simulations. With the generated `test_out.dat` file, apply `FinalStateHardon`
 and analysis the output to get $p_T$-spectra for charged hadrons and their
 flow anisotropy coefficients.
