@@ -358,7 +358,7 @@ You cannot do it in experiment, but it is easy in SMASH:
 </details>
 
 
-<details><summary><b> 7. Observe chemical and kinetic freeze-out </b></summary>
+<details><summary><b> 7. Explore chemical and kinetic freeze-out </b></summary>
 <p>
 
 Download sampled particles, which we input to SMASH from [this link](https://drive.google.com/file/d/1iTLL2tjRI0f_bz8uKl5SXFLC6yMHPrM0/view?usp=sharing).
@@ -400,6 +400,29 @@ Run SMASH (took around 5 minutes on my laptop):
 ```
   ./smash --config ...
 ```
+
+
+Looking at resonance formation and decays:
+
+```
+ collisions->Draw("t","nin == 2 && nout == 1 ");
+ collisions->Draw("t","nin == 1 && nout == 2 ", "same");
+```
+
+Looking at formations and decays specifically for Delta0(1232):
+
+```
+ collisions->Draw("t","nin == 2 && nout == 1 && pdgcode[2] == 2114");
+ collisions->Draw("t","nin == 1 && nout == 2 && pdgcode[0] == 2114", "same");
+```
+
+Looking at elastic and inelastic 2->2 collisions in tau-eta coordinates:
+
+```
+collisions->Draw("sqrt(t*t-z*z):log((t-z)/(t+z))","nin == 2 && nout == 2 &&  ((pdgcode[0] == pdgcode[2] && pdgcode[1] == pdgcode[3]) || (pdgcode[0] == pdgcode[3] && pdgcode[1] == pdgcode[2]))");
+collisions->Draw("sqrt(t*t-z*z):log((t-z)/(t+z))","nin == 2 && nout == 2 && !((pdgcode[0] == pdgcode[2] && pdgcode[1] == pdgcode[3]) || (pdgcode[0] == pdgcode[3] && pdgcode[1] == pdgcode[2]))", "same");
+```
+
 </p>
 </details>
 
