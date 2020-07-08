@@ -172,10 +172,9 @@ jupyter notebook --ip 0.0.0.0 --no-browser > notebook.log 2>&1 &
 ```
 
 Once the jupyter notebook is running in the background, the user can open
-the notebook.log with `vim notebook.log`, then the user can click on the
+the notebook.log with `cat notebook.log`, then the user can click on the
 link with holding the `ctrl` key. After the click, your web browser should
-be launched in the current directory. Finally, you can quit `vim` in your
-command windown by typing in `:q!` and enter.
+be launched in the current directory.
 
 
 ### Averaged temperature and flow velocity evoltion
