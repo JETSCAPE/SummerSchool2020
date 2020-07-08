@@ -187,14 +187,14 @@ Prints the list of all SMASH command line options
   print out particles in the middle of the simulation, it will do so every 10.0 fm/c.
   By default SMASH will print out only particles in the end of the simulation.
   To make it actually print out particles every 10 fm/c we need to supply our config with
-  an additional `Only_Final: False` option.
+  an additional `Only_Final: No` option.
 
   ```
     Output:
         Output_Interval: 10.0
         Particles:
             Format:          ["Oscar2013"]
-            Only_Final:      False
+            Only_Final:      No
   ```
 
   **Let's look at the results of our simulations.**
@@ -226,7 +226,7 @@ Prints the list of all SMASH command line options
         Output_Interval: 1.0
         Particles:
             Format:          ["Oscar2013", "Root", "VTK"]
-            Only_Final:      False
+            Only_Final:      No
             Extended:        True
   ```
 
@@ -360,5 +360,52 @@ You cannot do it in experiment, but it is easy in SMASH:
 
 <details><summary><b> 7. Observe chemical and kinetic freeze-out </b></summary>
 <p>
+
+Download sampled particles, which we input to SMASH from [this link](https://drive.google.com/file/d/1iTLL2tjRI0f_bz8uKl5SXFLC6yMHPrM0/view?usp=sharing).
+Unpack:
+
+```
+  tar -xvf SMASH_input_particles_from_MUSIC_hydro.tar.gz
+```
+
+
+Content of SMASH config file:
+
+```
+General:
+    Modus:          List
+    End_Time:       100.0
+    Nevents:        100
+    Randomseed:     -1
+
+Output:
+    Particles:
+        Format:     ["Root"]
+        Extended:   True
+        Only_Final: Yes
+    Collisions:
+        Format:     ["Root"]
+        Extended:   True
+
+Modi:
+    List:
+        File_Directory: "."
+        File_Prefix:    "sampled_particles"
+        Shift_Id:       0
+
+```
+
+Run SMASH (took around 5 minutes on my laptop):
+
+```
+  ./smash --config ...
+```
 </p>
 </details>
+
+<details><summary><b> 8. Summary and discussion </b></summary>
+
+
+</p>
+</details>
+
