@@ -30,7 +30,7 @@ I'm very new with docker, so here I assemble commands that were useful for me:
 </details>
 
 
-<details><summary><b> 1. What is SMASH </b></summary>
+<details><summary><b> What is SMASH </b></summary>
 <p>
 
 SMASH is a hadronic transport code. In JETSCAPE it simulates multiple hadron-hadron scatterings in the final dilute stage of the fireball evolution.
@@ -42,7 +42,7 @@ to create similar visualizations, configure SMASH and analyze its output.
 
 
 
-<details><summary><b> 2. Making sure prequisites are ready </b></summary>
+<details><summary><b> Making sure prequisites are ready </b></summary>
 <p>
 
 1. I assume that you have followed the [general school instructions](https://github.com/JETSCAPE/SummerSchool2020/blob/master/README.md) and have
@@ -76,7 +76,7 @@ into this line and make sure you have a ROOT browser opening.
 </details>
 
 
-<details><summary><b> 3. Installing SMASH in docker environment </b></summary>
+<details><summary><b> 1. Installing SMASH in docker environment </b></summary>
 <p>
 
 Go to the docker environment. If you didn't start it yet, start by
@@ -117,7 +117,7 @@ Prints the list of all SMASH command line options
 
 
 
-<details><summary><b> 4. Configuring SMASH </b></summary>
+<details><summary><b> 2. Configuring SMASH </b></summary>
 <p>
   What SMASH is going to simulate depends on what you ask it.
   By default it simulates a Au+Au collision at 1.23 GeV per nucleon in the lab frame.
@@ -243,7 +243,7 @@ Prints the list of all SMASH command line options
 
 
 
-<details><summary><b> 5. Analysis of ROOT output </b></summary>
+<details><summary><b> 3. Analysis of ROOT output, looking at rapidity distributions </b></summary>
 <p>
 
 
@@ -386,7 +386,7 @@ You cannot do it in experiment, but it is easy in our case using the scatter-plo
 </details>
 
 
-<details><summary><b> 6. Exploring chemical and kinetic freeze-out </b></summary>
+<details><summary><b> 4. Exploring chemical and kinetic freeze-out </b></summary>
 <p>
 
 In this part we are going to discuss the chemical and kinetic freeze-out of
