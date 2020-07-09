@@ -402,10 +402,11 @@ spectra and yields from two simulations
 
 For these simulations I have generated 100 events of particles sampled
 from a hydrodynamic simulation of central Au+Au collisions at 19.6 GeV.
-Download these sampled particles by [this link](https://drive.google.com/file/d/1iTLL2tjRI0f_bz8uKl5SXFLC6yMHPrM0/view?usp=sharing).
+Download these sampled particles by [this link](https://drive.google.com/file/d/1iTLL2tjRI0f_bz8uKl5SXFLC6yMHPrM0/view?usp=sharing)
+and save to `JETSCAPE/external_packages/smash/smash_code/build` folder.
 We will use them as an input to SMASH.
 
-Unpack it:
+Unpack the file:
 
 ```
   cd JETSCAPE/external_packages/smash/smash_code/build
