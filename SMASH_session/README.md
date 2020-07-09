@@ -170,7 +170,8 @@ Prints the list of all SMASH command line options
             Only_Final:      No
   ```
 
-  ####Let's look at the results of our simulations
+*Let's look at the results of our simulations*
+----
 
   By default SMASH output will be in the folders `data/0`, `data/1`, etc.
   Open the latest `data/?` folder and look at the files there.
@@ -194,7 +195,8 @@ Prints the list of all SMASH command line options
   For this we want output in a ROOT format.
 
 
-  #### Let's generate ROOT output with more events for analysis
+*Let's generate ROOT output with more events for analysis*
+----
 
   Create a `config_SMASH_tutorial_collider.yaml` file with the following contents:
 
