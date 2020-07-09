@@ -53,8 +53,8 @@ you can use `sudo` in front of the docker run command.
 
 We will do all of our exercises in the **`JETSCAPE/JShydro`** directory:
 
-When you enter the docker container, type the following commands to go to the
-correct working directory,
+When you enter the docker container (Terminal prompt: `jetscape-user@bfc60af94a4a:~$`),
+type the following commands to setup the working directory,
 
 ```
 cd JETSCAPE
