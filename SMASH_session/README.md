@@ -232,7 +232,7 @@ Prints the list of all SMASH command line options
   Run smash with this config:
 
   ```
-    ./smash -i config_SMASH_tutorial_collider.yaml
+    ./smash --inputfile config_SMASH_tutorial_collider.yaml
   ```
 
 
@@ -449,7 +449,7 @@ Modi:
 Put this into `config_SMASH_tutorial_afterburner.yaml` and run SMASH with this configuration -- it took around 5 minutes on my laptop:
 
 ```
-  ./smash -i config_SMASH_tutorial_afterburner.yaml
+  ./smash --inputfile config_SMASH_tutorial_afterburner.yaml
 ```
 
 
