@@ -124,7 +124,7 @@ The users can specify the types of collision systems in JETSCAPE xml file,
 
 In the user configuration file `hydro_session/jetscape_user_AuAu200.xml`,
 one can modify model parameters for the initial state module to simulate
-his/her desired collision system. In between `<Trento>` and `<\Trento>`,
+his/her desired collision system. In between **`<Trento>`** and **`<\Trento>`**,
 we can specify the type of colliding nucleus, collision energy, and centrality.
 
 [Run 1] Simulate a 0-10% Au+Au collision at 200 GeV,
@@ -162,9 +162,9 @@ The most interesting ones are the specific shear and bulk viscosity.
 All the relevant parameters are under the block `<hydro>` **`<MUSIC>`**.
 
 The user can set the a constant specific shear viscosity by changing the
-value for the parameter *`<shear_viscosity_eta_over_s>`*. A physical $\eta/s$
+value for the parameter **`<shear_viscosity_eta_over_s>`**. A physical $\eta/s$
 needs to be a positive value. We recommend the users to try any real value
-between 0 and 0.3 in the exercies.
+between **0** and **0.3** in the exercies.
 
 Moreover, the users can include a non-zero bulk viscosity in the hydrodynamic
 simulations. Because the QCD bulk viscosity is related to the breaking of
@@ -188,7 +188,7 @@ Comparison plots can be made using the jupyter notebook
 `hydro_evo-ViscosityComp.ipynb`.
 
 
-## [SSB] Temperature dependent $\eta/s$ and $\zeta/s$
+## [SSB] Temperature dependent $(\eta/s)(T)$ and $(\zeta/s)(T)$
 
 One can further try a temperature dependent $(\eta/s)(T)$ by setting
 the variable `<T_dependent_Shear_to_S_ratio>` to **3**. Once this parameter
