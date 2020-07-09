@@ -119,9 +119,9 @@ animation for the temperature and fluid velocity evolution.
 
 The users can specify the types of collision systems in JETSCAPE xml file,
 
-    * Collision Energy
-    * Colliding Nuclei
-    * Centrality
+* Collision Energy
+* Colliding Nuclei
+* Centrality
 
 In the user configuration file `hydro_session/jetscape_user_AuAu200.xml`,
 one can modify model parameters for the initial state module to simulate
@@ -154,9 +154,8 @@ and run the code cells one-by-one to see the comparisons.
 
 ## <img src="figs/SSJB.gif" alt="SSJB" width="120"/> Study the effects of viscosity in hydrodynamic evolution
 
-- QGP viscosity
-    * Specific shear viscosity $\eta/s$
-    * Specific bulk viscosity $\zeta/s$
+* Specific shear viscosity ![formula](https://render.githubusercontent.com/render/math?math=\eta/s)
+* Specific bulk viscosity ![formula](https://render.githubusercontent.com/render/math?math=\zeta/s)
 
 Using a realistic hydrodynamic module inside the JETSCAPE, the users have
 freedom to change a few physical parameters for the hydrodynamic simulations.
