@@ -27,6 +27,20 @@ processes among hadrons and decays of excited resonance states.
 
 ## Setup a docker container
 
+Before we begin our session, please make sure all the code packages are already
+in the correct place on your computer. You should have a `jetscape-docker` folder
+under your home directory. Try to list the folder inside `jetscape-docker` with
+the following command,
+
+```
+ls ~/jetscape-docker
+```
+
+You need to make sure the following folders are present,
+
+* JETSCAPE
+* SummerSchool2020
+
 In this session, we need to launch a docker container that supports the jupyter
 notebook. Please use the following command:
 
@@ -51,7 +65,23 @@ you can use `sudo` in front of the docker run command.
 
 ## Build JETSCAPE with MUSIC and iSS
 
-We will do all of our exercises in the **`JETSCAPE/JShydro`** directory:
+We will do all of our exercises in the **`JETSCAPE/JShydro`** directory.
+Please make sure all the external code packages (MUSIC and iSS) have been
+downloaded. You can check this by the following commands,
+
+```
+cd ~/JETSCAPE/external_packages
+ls
+```
+
+Please check the folder `music` and `iSS` are present. If not, please
+run the following commands,
+
+```
+./get_music.sh
+./get_iSS.sh
+```
+
 
 When you enter the docker container, type the following commands to setup
 the working directory,
