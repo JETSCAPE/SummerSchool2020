@@ -5,7 +5,7 @@
 - Understand how to run JETSCAPE with a few default Fluid dynamics modules
 and set/change their relevant parameters, such as transport coefficients
 
-- Using a realistic hydrodynamic module, students will be able to output
+- With a realistic hydrodynamic module, students will be able to output
 hydrodynamic evolution profile and analyze the evolution of temperature
 and the development of flow velocity with various settings
 
@@ -17,17 +17,17 @@ Pb+Pb @ 5020 GeV with a realistic hydrodynamics code, such as MUSIC.
 The JETSCAPE framework employs the Trento model to generate event-by-event
 initial energy density profile. The energy density profile is then passed to
 the hydrodynamics module (MUSIC), which will evolve the collision system from
-a hot QGP phase to hadron gas phase. Optionally, pre-equilibrium dynamics
+a hot QGP phase to the hadron gas phase. Optionally, pre-equilibrium dynamics
 modeled by free-streaming can be included between the Trento and hydrodynamics.
 In the dilute hadronic phase, fluid cells will convert to individual
 hadrons. This process is denoted as the particlization. The JETSCAPE framework
 uses iSS to perform particlization. The produced hadrons can be
-fed to a hadronic transport model (SMASH) which accounts for scattering
+fed to a hadronic transport model (SMASH), which accounts for scattering
 processes among hadrons and decays of excited resonance states.
 
 ## Setup a docker container
 
-In this session, we need to launch a docker container that supports jupyter
+In this session, we need to launch a docker container that supports the jupyter
 notebook. Please use the following command:
 
 **macOS:**
@@ -35,12 +35,12 @@ notebook. Please use the following command:
 docker run -it -p 8888:8888 -v ~/jetscape-docker:/home/jetscape-user --name myJSHydroSession jetscape/base:v1.4
 ```
 
-**linux:**
+**Linux:**
 ```
 docker run -it -p 8888:8888 -v ~/jetscape-docker:/home/jetscape-user --name myJSHydroSession --user $(id -u):$(id -g) jetscape/base:v1.4
 ```
 
-- `--rm` This option will delete the current docker container at exit.
+- `--rm` This option will delete the current docker container at the exit.
 (If you want to delete the container, you can add this option.)
 - `-p 8888:8888` This option creates a port for your web browser outside
 the docker container to load a jupyter notebook.
@@ -72,7 +72,7 @@ cp -r ../../SummerSchool/hydro_session .
 
 ## <img src="figs/Goku.png" alt="Goku" width="60"/> A Test Run for JETSCAPE with MUSIC
 
-To peform a test run for JETSCAPE with MUSIC
+To perform a test run for JETSCAPE with MUSIC,
 
 ```
 ./runJetscape hydro_session/jetscape_user_MUSICTestRun.xml
@@ -88,26 +88,26 @@ cat notebook.log
 ```
 
 Once the jupyter notebook is running in the background, the user can click
-on the link with holding the `ctrl` key. The link is displayed at the
-second to the last line and begin with
+on the link by holding the `ctrl` key. The link is displayed at the
+second to the last line and begins with
 `http://127.0.0.1:8888/?token=...`
 After the click, your web browser should be launched in the current directory.
 Alternatively, you can open your browser and enter the following address,
 `http://127.0.0.1:8888`
 
 
-#### 1. Plot averaged temperature and flow velocity evoltion
+#### 1. Plot averaged temperature and flow velocity evolution
 
 In your browser, we first go into the `hydro_session` folder.
 We can open the notebook `hydro_evo_TestRun.ipynb` by click on it inside
 the browser. Once the notebook is opened, the user can execute every cell
 in this notebook one-by-one. Press `shift+enter` to execute the cell block
-in in the notebook.
+in the notebook.
 
 
 #### 2. Animation of averaged temperature and flow velocity evolution
 
-Similar to the previous exercies, this time we will open the second notebook
+Similar to the previous exercise, this time we will open the second notebook
 under `hydro_session` folder, `hydro_movie_TestRun.ipynb`.
 After it is opened inside your browser, you can execute
 the code cells one by one to generate 2D color contour plots as well as
@@ -134,7 +134,7 @@ we can specify the type of colliding nucleus, collision energy, and centrality.
 ./hydro_session/collect_results.sh Run_AuAu200_C0-10
 ```
 
-The second command collects all the results into a new folder
+The second command collects all the results into a new folder,
 `Run_AuAu200_C0-10`.
 
 [Run 2] Simulate a 20-30% Pb+Pb collisions at 5.02 TeV,
@@ -162,10 +162,10 @@ freedom to change a few physical parameters for the hydrodynamic simulations.
 The most interesting ones are the specific shear and bulk viscosity.
 All the relevant parameters are under the block `<hydro>` **`<MUSIC>`**.
 
-The user can set the a constant specific shear viscosity by changing the
+The user can set a constant specific shear viscosity by changing the
 value for the parameter **`<shear_viscosity_eta_over_s>`**. A physical $\eta/s$
 needs to be a positive value. We recommend the users to try any real value
-between **0** and **0.3** in the exercies.
+between **0** and **0.3** in the exercises.
 
 Moreover, the users can include a non-zero bulk viscosity in the hydrodynamic
 simulations. Because the QCD bulk viscosity is related to the breaking of
@@ -191,10 +191,10 @@ Comparison plots can be made using the jupyter notebook
 
 ## <img src="figs/UltraInstinct.gif" alt="UI" width="140"/> Temperature dependent $(\eta/s)(T)$ and $(\zeta/s)(T)$
 
-One can further try a temperature dependent $(\eta/s)(T)$ by setting
+One can further try a temperature-dependent $(\eta/s)(T)$ by setting
 the variable `<T_dependent_Shear_to_S_ratio>` to **3**. Once this parameter
 is set to 3, the previous parameter `<shear_viscosity_eta_over_s>` will be
-ineffective. The users needs to further specify the following four parameters
+ineffective. The users need to further specify the following four parameters,
 
     1. <eta_over_s_T_kink_in_GeV>
     2. <eta_over_s_low_T_slope_in_GeV>
@@ -231,16 +231,16 @@ change the starting time of hydrodynamics, `<Initial_time_tau_0>` (0.2-1.0 fm)
 `<Include_second_order_terms>` (0 or 1), and particlization temperature,
 `<freezeout_temperature>` (0.13 to 0.16 GeV)
 
-Initial state module, between `<IS>` and `</IS>` also define the 3D grid
+Initial state module, between `<IS>` and `</IS>`, also define the 3D grid
 that we would like to simulate hydrodynamic evolution. If one set
 `grid_max_z` to 0, the JETSCAPE framework will perform a (2+1) hydrodynamic
 simulations assuming longitudinal boost-invariant.
 
 Finally, the user can specify a random seed for the entire simulation.
 This is specified inside the block `<Random>` in the xml file. If the
-`<seed>` parameter is set to 0, then random seed will be determined by
+`<seed>` parameter is set to 0. Then the random seed will be determined by
 the system time. If `<seed>` is set to any positive number, the JETSCAPE
-will perform simulation with the given positive number is the random
+will perform simulations with the given positive number is the random
 seed for all its modules. A fix seed simulation will be handy when we
 study the effect of viscosity during the hydrodynamic evolution.
 
@@ -253,12 +253,12 @@ and move the following three files into the result folder,
     This file has the evolution information about the momentum anisotropy,
     average velocity, and average temperature.
     * evolution_for_movie_xyeta_MUSIC.dat
-    This file contains evolution history of fluid cells above T = 130 MeV.
+    This file contains the evolution history of fluid cells above T = 130 MeV.
 
 
 ## [Bonus] Produce hadrons from hydrodynamics
 
-In JETSCAPE, a third party particle sampler iSpectraSampler (iSS) is employed
+In JETSCAPE, a third-party particle sampler iSpectraSampler (iSS) is employed
 to convert fluid cells to particles. The iSS produces Monte-Carlo particles
 from the hydrodynamic hyper-surface. The spatial and momentum distributions
 of particles follow the Cooper-Frye Formula.
@@ -283,8 +283,8 @@ anisotropic flow coefficients $v_n$. An example of the analysis code is
 ## 1. Study the viscous effects on hydrodynamic evolution
 
 Simulate a Pb+Pb collision in 20-30% centrality at 5.02 TeV. In order to
-compare simulations with different viscosity, we need to fixed the
-random seed. You can choose your favorate number for the seed. (42?)
+compare simulations with different viscosity, we need to fix the
+random seed. You can choose your favorite number for the seed. (42?)
 
 * Compare the averaged temperature evolution with two choices of
 the specific bulk viscosity $\zeta/s(T)$
@@ -298,19 +298,19 @@ with two different shear viscosities
 
 ## 2. Produce animation for the temperature and flow velocity profiles in the transverse plane
 
-* Pick your favorate collision system (colliding nuclei, collision energy,
-and centrality) and generage hydrodynamic evolution file.
+* Pick your favorite collision system (colliding nuclei, collision energy,
+and centrality) and generate a hydrodynamic evolution file.
 
-You can try different color maps and even define your own to make the
-animation pretty.
+You can try different color maps or even define your own to make the
+animation vivid.
 
 Please send your best animation to chunshen@wayne.edu.
 We will select the most impressive ones and post them on the school website.
 
 
-## 3. [Bonus] Compute particle spectra and flow anisotropic flow Qn vectors from the event-by-event simulations for one heavy-ion collison system.
+## 3. [Bonus] Compute particle spectra and flow anisotropic flow Qn vectors from the event-by-event simulations for one heavy-ion collision system.
 
-To accumlate statistic, you can set `<nEvents>` to 50 and
+To accumulate statistic, you can set `<nEvents>` to 50 and
 `<nReuseHydro>` to 50 in the xml file to avoid running 50 hydrodynamic
 simulations. With the generated `test_out.dat` file, apply `FinalStateHardon`
 and analysis the output to get $p_T$-spectra for charged hadrons and their
