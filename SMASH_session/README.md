@@ -361,17 +361,37 @@ You cannot do it in experiment, but it is easy in SMASH:
 <details><summary><b> 7. Explore chemical and kinetic freeze-out </b></summary>
 <p>
 
-Download sampled particles, which we input to SMASH from [this link](https://drive.google.com/file/d/1iTLL2tjRI0f_bz8uKl5SXFLC6yMHPrM0/view?usp=sharing).
-Unpack:
+In this part we are going to discuss the chemical and kinetic freeze-out of
+hadrons. First of all, do you know what chemical and kinetic freeze-outs are?
+Write the definitions as you understand them in the chat.
+
+Are hadrons chemically frozen out immediately after the hydrodynamics is stopped
+and hadronic afterburner is started? Let's try to answer this by comparing
+spectra and yields from two simulations
+
+  # Just letting resonances decay, without any rescattering
+  # Running the full hadronic rescattering
+
+For these simulations I have generated 100 events of particles sampled
+from a hydrodynamic simulation of central Au+Au collisions at 19.6 GeV.
+Download these sampled particles by [this link](https://drive.google.com/file/d/1iTLL2tjRI0f_bz8uKl5SXFLC6yMHPrM0/view?usp=sharing).
+We will use them as an input to SMASH.
+
+Unpack it:
 
 ```
   tar -xvf SMASH_input_particles_from_MUSIC_hydro.tar.gz
 ```
+You should get a file `sampled_particles0`.
 
-
-Content of SMASH config file:
+Next, configure SMASH to run as an afterburner. Here is the content of the SMASH config file:
 
 ```
+Version: 1.8 # minimal SMASH version to use with this config file
+
+Logging:
+    default: INFO
+
 General:
     Modus:          List
     End_Time:       100.0
@@ -379,10 +399,11 @@ General:
     Randomseed:     -1
 
 Output:
+    Output_Interval:  100.0
     Particles:
         Format:     ["Root"]
         Extended:   True
-        Only_Final: Yes
+        Only_Final: No
     Collisions:
         Format:     ["Root"]
         Extended:   True
@@ -395,11 +416,34 @@ Modi:
 
 ```
 
-Run SMASH (took around 5 minutes on my laptop):
+Run SMASH with this configuration -- it took around 5 minutes on my laptop.
+Now let's run SMASH starting from the same initial state, but switching
+off all collisions. This is done in the SMASH config by setting option
 
 ```
-  ./smash --config ...
+Collision_Term:
+    No_Collisions:  True
 ```
+
+Run SMASH again without collisions. Let's use ROOT TBrowser to compare the spectra.
+Let's look, for example, at pion transverse momentum spectra at midrapidity
+
+```
+  particles->Draw("sqrt(px*px+py*py)", "t == 100 && abs(0.5 * log((p0 + pz)/(p0 - pz)) < 1.0) && pdgcode == 211", "E");
+```
+How much do pion spectra differ for the simulation with and without scattering? Repeat the same for kaons and protons.
+
+What can you conclude from this study? Let's discuss in the chat.
+
+# How much does the hadronic rescattering change the spectra?
+# What can you say about chemical freeze-out?
+# What can you say about kinetic freeze-out?
+
+----
+
+Now let us look at the reactions. When do the elastic and inelastic reactions stop?
+Do inelastic reactions cease earlier than elastic ones? Are reactions equilibrated
+at some point, i.e. do they occur at the same rate in forward and backward directions?
 
 
 Looking at resonance formation and decays:
