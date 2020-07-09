@@ -469,8 +469,8 @@ Looking at formations and decays specifically for Delta0(1232):
 Looking at elastic and inelastic 2->2 collisions in tau-eta coordinates:
 
 ```
-collisions->Draw("sqrt(t*t-z*z):log((t-z)/(t+z))","nin == 2 && nout == 2 &&  ((pdgcode[0] == pdgcode[2] && pdgcode[1] == pdgcode[3]) || (pdgcode[0] == pdgcode[3] && pdgcode[1] == pdgcode[2]))");
-collisions->Draw("sqrt(t*t-z*z):log((t-z)/(t+z))","nin == 2 && nout == 2 && !((pdgcode[0] == pdgcode[2] && pdgcode[1] == pdgcode[3]) || (pdgcode[0] == pdgcode[3] && pdgcode[1] == pdgcode[2]))", "same");
+collisions->Draw("sqrt(t * t - z * z):log((t-z)/(t+z))","nin == 2 && nout == 2 &&  ((pdgcode[0] == pdgcode[2] && pdgcode[1] == pdgcode[3]) || (pdgcode[0] == pdgcode[3] && pdgcode[1] == pdgcode[2]))");
+collisions->Draw("sqrt(t * t - z * z):log((t-z)/(t+z))","nin == 2 && nout == 2 && !((pdgcode[0] == pdgcode[2] && pdgcode[1] == pdgcode[3]) || (pdgcode[0] == pdgcode[3] && pdgcode[1] == pdgcode[2]))", "same");
 ```
 
 </p>
@@ -478,6 +478,9 @@ collisions->Draw("sqrt(t*t-z*z):log((t-z)/(t+z))","nin == 2 && nout == 2 && !((p
 
 <details><summary><b> 8. Summary and discussion </b></summary>
 
+1. What did you learn about chemical and kinetic freeze-out?
+2. Were we able to pinpoint them in a transport simulation? If yes then how? If no then why?
+3. How would you proceed to study it further?
 
 </p>
 </details>
