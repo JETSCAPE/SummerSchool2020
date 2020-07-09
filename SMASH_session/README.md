@@ -1,12 +1,12 @@
 # SMASH hadronic transport hands-on session
 
 ### Our goals
-1. Use SMASH as a hadronic afterburner, generate ROOT output of particles and collisions
-   and by analyzing it learn about chemical and kinetic freeze-out.
-2. (Optional)
-   Generate SMASH vtk output and look at visualizations of collisions.
+ - Use SMASH as a hadronic afterburner
+ - Generate ROOT output of particles and collisions
+ - By analyzing it learn about chemical and kinetic freeze-out
+ - (Optional) Generate SMASH vtk output and look at visualizations of collisions.
 
-To begin add your name to the [table](https://docs.google.com/spreadsheets/d/1f1M4vro1lFZnp80Dy0bE_XjYxMQid9oG9BgEMiO10-o/edit?usp=sharing) to mark your progress.
+*To begin* add your name to the [table](https://docs.google.com/spreadsheets/d/1f1M4vro1lFZnp80Dy0bE_XjYxMQid9oG9BgEMiO10-o/edit?usp=sharing) to mark your progress.
 Then follow the steps below.
 
 <details><summary> My personal docker cheat sheet </summary>
