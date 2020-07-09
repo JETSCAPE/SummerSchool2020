@@ -72,7 +72,8 @@ new TBrowser
 
 into this line and make sure you have a ROOT browser opening.
 
-
+</p>
+</details>
 
 
 <details><summary><b> 3. Installing SMASH in docker environment </b></summary>
