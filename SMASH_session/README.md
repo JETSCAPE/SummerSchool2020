@@ -402,6 +402,10 @@ spectra and yields from two simulations
   1. Just letting resonances decay, without any rescattering
   2. Running the full hadronic rescattering
 
+
+*SMASH simulation*
+----
+
 For these simulations I have generated 100 events of particles sampled
 from a hydrodynamic simulation of central Au+Au collisions at 19.6 GeV.
 Download these sampled particles by [this link](https://drive.google.com/file/d/1iTLL2tjRI0f_bz8uKl5SXFLC6yMHPrM0/view?usp=sharing)
@@ -463,6 +467,10 @@ off all collisions. This is done in the SMASH config by setting option
 Collision_Term:
     No_Collisions:  True
 ```
+
+*Analysing the results of SMASH simulation*
+----
+
 
 Run SMASH again without collisions. Let's use ROOT TBrowser to compare the spectra.
 In case you can't open it in TBrowser:
