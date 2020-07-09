@@ -131,16 +131,17 @@ we can specify the type of colliding nucleus, collision energy, and centrality.
 
 ```
 ./runJetscape hydro_session/jetscape_user_AuAu200.xml
-./hydro_session/collect_results.sh AuAu200_C0-10
+./hydro_session/collect_results.sh Run_AuAu200_C0-10
 ```
 
-The second command collects all the results into a new folder `AuAu200_C0-10`.
+The second command collects all the results into a new folder
+`Run_AuAu200_C0-10`.
 
 [Run 2] Simulate a 20-30% Pb+Pb collisions at 5.02 TeV,
 
 ```
 ./runJetscape hydro_session/jetscape_user_PbPb5020.xml
-./hydro_session/collect_results.sh PbPb5020_C20-30
+./hydro_session/collect_results.sh Run_PbPb5020_C20-30
 ```
 
 Now we can compare the evolution temperature and flow velocity between these
@@ -179,9 +180,9 @@ Users can run the JETSCAPE with two example config files,
 
 ```
 ./runJetscape hydro_session/jetscape_user_shear.xml
-./hydro_session/collect_results.sh shear_only
+./hydro_session/collect_results.sh Run_shear_only
 ./runJetscape hydro_session/jetscape_user_shear_and_bulk.xml
-./hydro_session/collect_results.sh shear_and_bulk
+./hydro_session/collect_results.sh Run_shear_and_bulk
 ```
 
 Comparison plots can be made using the jupyter notebook
@@ -213,6 +214,13 @@ $(\zeta/s)(T)$. They are as follows,
     2. <zeta_over_s_T_peak_in_GeV>
     3. <zeta_over_s_width_in_GeV>
     4. <zeta_over_s_lambda_asymm>
+
+Users can play with settings in `hydro_session/jetscape_user_TempDepVis.xml`.
+
+```
+./runJetscape hydro_session/jetscape_user_TempDepVis.xml
+./hydro_session/collect_results.sh Run_TempDepVisc
+```
 
 
 ## Side notes
@@ -267,7 +275,7 @@ the build folder,
 With the produced `hadron_list.dat` file, the users can apply their own
 analysis script to compute particle spectra, mean $p_T$, and
 anisotropic flow coefficients $v_n$. An example of the analysis code is
-`analyze_particle_spectra_and_vn.ipynb`. 
+`analyze_particle_spectra_and_vn.ipynb`.
 
 
 # HOMEWORK
