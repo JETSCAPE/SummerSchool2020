@@ -571,11 +571,11 @@ If you didn't manage to install paraview for more than 10 minutes, give it up
 and proceed further. Paraview is nice to have, but not critical for us.
 
 
-</p>
-</details>
-
   If you didn't manage to install paraview, skip this section. It's pretty and fun, but not critical for us.
 
+
+*Generating SMASH output for visualization*
+----
 
   Let's generate the output from SMASH that paraview can read. It's called the VTK output. To switch it on
   add it to the SMASH config:
@@ -602,6 +602,9 @@ and proceed further. Paraview is nice to have, but not critical for us.
   ```
     ./smash
   ```
+
+*Visualization*
+----
 
   Look at the last of the `data/0`, `data/1`, `data/?` folders. Do you see a lot of `.vtk` files there?
   Let us open these vtk files. For this start `paraview`, press `File -> Open`
