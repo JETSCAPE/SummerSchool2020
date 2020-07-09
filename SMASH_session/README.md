@@ -369,8 +369,8 @@ Are hadrons chemically frozen out immediately after the hydrodynamics is stopped
 and hadronic afterburner is started? Let's try to answer this by comparing
 spectra and yields from two simulations
 
-  # Just letting resonances decay, without any rescattering
-  # Running the full hadronic rescattering
+  1. Just letting resonances decay, without any rescattering
+  2. Running the full hadronic rescattering
 
 For these simulations I have generated 100 events of particles sampled
 from a hydrodynamic simulation of central Au+Au collisions at 19.6 GeV.
@@ -429,7 +429,7 @@ Run SMASH again without collisions. Let's use ROOT TBrowser to compare the spect
 Let's look, for example, at pion transverse momentum spectra at midrapidity
 
 ```
-  particles->Draw("sqrt(px*px+py*py)", "t == 100 && abs(0.5 * log((p0 + pz)/(p0 - pz)) < 1.0) && pdgcode == 211", "E");
+  particles->Draw("sqrt(px * px + py * py)", "t == 100 && abs(0.5 * log((p0 + pz)/(p0 - pz)) < 1.0) && pdgcode == 211", "E");
 ```
 How much do pion spectra differ for the simulation with and without scattering? Repeat the same for kaons and protons.
 
