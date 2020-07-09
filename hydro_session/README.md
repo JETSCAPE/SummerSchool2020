@@ -53,11 +53,11 @@ you can use `sudo` in front of the docker run command.
 
 We will do all of our exercises in the **`JETSCAPE/JShydro`** directory:
 
-When you enter the docker container (Terminal prompt: `jetscape-user@bfc60af94a4a:~$`),
-type the following commands to setup the working directory,
+When you enter the docker container, type the following commands to setup
+the working directory,
 
 ```
-cd JETSCAPE
+cd ~/JETSCAPE
 mkdir JShydro
 cd JShydro
 cmake .. -DUSE_MUSIC=ON -DUSE_ISS=ON
@@ -67,10 +67,10 @@ cp -r ../../SummerSchool/hydro_session .
 
 The last command copies the hand-on materials of this session to the working folder.
 
-
 ## <img src="figs/Goku.png" alt="Goku" width="60"/> A Test Run for JETSCAPE with MUSIC
 
-To perform a test run for JETSCAPE with MUSIC,
+To perform a test run for JETSCAPE with MUSIC in our working directory
+(**`~/JETSCAPE/JShydro`**),
 
 ```
 ./runJetscape hydro_session/jetscape_user_MUSICTestRun.xml
@@ -78,7 +78,8 @@ To perform a test run for JETSCAPE with MUSIC,
 
 ### Visualization with Jupyter Notebook
 
-Launch jupyter notebook inside the docker contain with the following command,
+Launch jupyter notebook inside the docker contain with the following command
+in our working directory (**`~/JETSCAPE/JShydro`**),
 
 ```
 jupyter notebook --ip 0.0.0.0 --no-browser > notebook.log 2>&1 &
@@ -97,7 +98,7 @@ you can open your browser and enter the following address,
 
 #### 1. Plot averaged temperature and flow velocity evolution
 
-In your browser, we first go into the `hydro_session` folder.
+In your browser, we first go into the `hydro_session` folder *(in your browser)*.
 We can open the notebook `hydro_evo_TestRun.ipynb` by click on it inside
 the browser. Once the notebook is opened, the user can execute every cell
 in this notebook one-by-one. Press `shift+enter` to execute the cell block
@@ -126,7 +127,8 @@ one can modify model parameters for the initial state module to simulate
 his/her desired collision system. In between **`<Trento>`** and **`<\Trento>`**,
 we can specify the type of colliding nucleus, collision energy, and centrality.
 
-[Run 1] Simulate a 0-10% Au+Au collision at 200 GeV,
+[Run 1] Simulate a 0-10% Au+Au collision at 200 GeV 
+in our working directory (**`~/JETSCAPE/JShydro`**),
 
 ```
 ./runJetscape hydro_session/jetscape_user_AuAu200.xml
@@ -136,7 +138,8 @@ we can specify the type of colliding nucleus, collision energy, and centrality.
 The second command collects all the results into a new folder,
 `Run_AuAu200_C0-10`.
 
-[Run 2] Simulate a 20-30% Pb+Pb collisions at 5.02 TeV,
+[Run 2] Simulate a 20-30% Pb+Pb collisions at 5.02 TeV
+in our working directory (**`~/JETSCAPE/JShydro`**),
 
 ```
 ./runJetscape hydro_session/jetscape_user_PbPb5020.xml
@@ -146,8 +149,8 @@ The second command collects all the results into a new folder,
 Now we can compare the evolution temperature and flow velocity between these
 two systems. You can visualize the comparison using the jupyter notebook,
 `hydro_evo-CollisionSystemsComp.ipynb`. Launch this notebook in your browser
-and run the code cells one-by-one to see the comparisons.
-
+and run the code cells one-by-one to see the comparisons
+(same procedure as in the previous exercise).
 
 
 ## <img src="figs/SSJB.gif" alt="SSJB" width="120"/> Study the effects of viscosity in hydrodynamic evolution
@@ -179,6 +182,7 @@ Setting `<temperature_dependent_bulk_viscosity>` to **0** will set
 Users can run the JETSCAPE with two example config files,
 
 ```
+# run the following command in ~/JETSCAPE/JShydro
 ./runJetscape hydro_session/jetscape_user_shear.xml
 ./hydro_session/collect_results.sh Run_shear_only
 ./runJetscape hydro_session/jetscape_user_shear_and_bulk.xml
@@ -220,6 +224,7 @@ They are as follows,
 Users can play with settings in `hydro_session/jetscape_user_TempDepVis.xml`.
 
 ```
+# run the following command in ~/JETSCAPE/JShydro
 ./runJetscape hydro_session/jetscape_user_TempDepVis.xml
 ./hydro_session/collect_results.sh Run_TempDepVisc
 ```
