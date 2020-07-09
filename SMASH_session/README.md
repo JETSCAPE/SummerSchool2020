@@ -589,7 +589,7 @@ and proceed further. Paraview is nice to have, but not critical for us.
 ----
 
   Let's generate the output from SMASH that paraview can read. It's called the VTK output. To switch it on
-  add it to the SMASH config:
+  add it to the SMASH config (config.yaml):
 
   ```
     Output:
