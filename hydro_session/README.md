@@ -92,8 +92,9 @@ on the link by holding the `ctrl` key. The link is displayed at the
 second to the last line and begins with
 `http://127.0.0.1:8888/?token=...`
 After the click, your web browser should be launched in the current directory.
-Alternatively, you can open your browser and enter the following address,
-`http://127.0.0.1:8888`
+If your terminal does not recognize html addresses,
+you can open your browser and enter the following address,
+`http://127.0.0.1:8888/?token=...`
 
 
 #### 1. Plot averaged temperature and flow velocity evolution
