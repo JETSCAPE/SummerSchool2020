@@ -27,6 +27,15 @@ processes among hadrons and decays of excited resonance states.
 
 ## Setup a docker container
 
+If you plan to do exercises on a remote computer with `ssh`, please use the
+following command to log in to your remote machine,
+
+```
+ssh -L 8888:127.0.0.1:8888 user@server
+```
+
+The port information is essential to properly setup jupyter notebook.
+
 Before we begin our session, please make sure all the code packages are already
 in the correct place on your computer. You should have a `jetscape-docker` folder
 under your home directory. Try to list the folder inside `jetscape-docker` with
