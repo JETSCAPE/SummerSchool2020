@@ -101,7 +101,7 @@ mkdir JShydro
 cd JShydro
 cmake .. -DUSE_MUSIC=ON -DUSE_ISS=ON
 make -j4
-cp -r ../../SummerSchool/hydro_session .
+cp -r ../../SummerSchool2020/hydro_session .
 ```
 
 The last command copies the hand-on materials of this session to the working folder.
