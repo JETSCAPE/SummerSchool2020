@@ -3,8 +3,8 @@
 ### Our goals
 1. Use SMASH as a hadronic afterburner, generate ROOT output of particles and collisions
    and by analyzing it learn about chemical and kinetic freeze-out.
-2. (Optional for the touch ones)
-   Generate SMASH vtk output and look at visualizations of hadronic scattering.
+2. (Optional)
+   Generate SMASH vtk output and look at visualizations of collisions.
 
 To begin add your name to the [table](https://docs.google.com/spreadsheets/d/1f1M4vro1lFZnp80Dy0bE_XjYxMQid9oG9BgEMiO10-o/edit?usp=sharing) to mark your progress.
 Then follow the steps below.
@@ -529,7 +529,8 @@ collisions->Draw("t:z","nin == 2 && nout == 2 && !((pdgcode[0] == pdgcode[2] && 
 <details><summary><b> (optional) Easy SMASH results visualization: looking at VTK output with paraview </b></summary>
 <p>
 
-#### Installing paraview
+
+*Installing paraview*
 ----
 
 For creating nice SMASH visualizations we will use paraview.
