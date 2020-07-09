@@ -70,7 +70,7 @@ Copy the hand-on materials of this session to the build folder,
 cp -r ../../SummerSchool/hydro_session .
 ```
 
-## [Goku] A Test Run for JETSCAPE with MUSIC
+## <img src="figs/Goku.png" alt="Goku" width="60"/> A Test Run for JETSCAPE with MUSIC
 
 To peform a test run for JETSCAPE with MUSIC
 
@@ -114,7 +114,7 @@ the code cells one by one to generate 2D color contour plots as well as
 animation for the temperature and fluid velocity evolution.
 
 
-## [SS] Change the collision systems
+## <img src="figs/SSJ.gif" alt="SSJ" width="120"/> Change the collision systems
 
 The users can specify the types of collision systems in JETSCAPE xml file,
 
@@ -151,7 +151,7 @@ and run the code cells one-by-one to see the comparisons.
 
 
 
-## [SS3] Study the effects of viscosity in hydrodynamic evolution
+## <img src="figs/SSJB.gif" alt="SSJB" width="120"/> Study the effects of viscosity in hydrodynamic evolution
 
 - QGP viscosity
     * Specific shear viscosity $\eta/s$
@@ -189,7 +189,7 @@ Comparison plots can be made using the jupyter notebook
 `hydro_evo-ViscosityComp.ipynb`.
 
 
-## [SSB] Temperature dependent $(\eta/s)(T)$ and $(\zeta/s)(T)$
+## <img src="figs/UltraInstinct.gif" alt="UI" width="140"/> Temperature dependent $(\eta/s)(T)$ and $(\zeta/s)(T)$
 
 One can further try a temperature dependent $(\eta/s)(T)$ by setting
 the variable `<T_dependent_Shear_to_S_ratio>` to **3**. Once this parameter
