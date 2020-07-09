@@ -9,7 +9,7 @@ and set/change their relevant parameters, such as transport coefficients
 hydrodynamic evolution profile and analyze the evolution of temperature
 and the development of flow velocity with various settings
 
--Simulate event-by-event bulk dynamics for Au+Au @ 200 GeV and
+- Simulate event-by-event bulk dynamics for Au+Au @ 200 GeV and
 Pb+Pb @ 5020 GeV with a realistic hydrodynamics code, such as MUSIC.
 
 ## Physics Background
@@ -170,11 +170,13 @@ between **0** and **0.3** in the exercises.
 Moreover, the users can include a non-zero bulk viscosity in the hydrodynamic
 simulations. Because the QCD bulk viscosity is related to the breaking of
 conformal symmetry, we expect the specific bulk viscosity to depend on
-temperature, $(\zeta/s)(T)$.
+temperature, ![formula](https://render.githubusercontent.com/render/math?math=(\zeta/s)(T)).
 
 Users can set the parameter `<temperature_dependent_bulk_viscosity>` to **1**,
-in the xml file to include a temperature dependent $(\zeta/s)(T)$.
-Setting `<temperature_dependent_bulk_viscosity>` to **0** will set $\zeta/s = 0$.
+in the xml file to include a temperature dependent
+![formula](https://render.githubusercontent.com/render/math?math=(\zeta/s)(T)).
+Setting `<temperature_dependent_bulk_viscosity>` to **0** will set
+![formula](https://render.githubusercontent.com/render/math?math=\zeta/s=0).
 
 Users can run the JETSCAPE with two example config files,
 
@@ -201,14 +203,16 @@ ineffective. The users need to further specify the following four parameters,
     3. <eta_over_s_high_T_slope_in_GeV>
     4. <eta_over_s_at_kink>`
 
-to characterize the temperature dependence of $(\eta/s)(T)$.
+to characterize the temperature dependence of
+![formula](https://render.githubusercontent.com/render/math?math=(\eta/s)(T)).
 
 Siimilar to the case for $(\eta/s)(T)$, the uses can set the parameter
 `<temperature_dependent_bulk_viscosity>` to **3** in the xml file to include
 a temperature dependent $(\zeta/s)(T)$.
 With `<temperature_dependent_bulk_viscosity>` set to 3, the users needs to
 further provide four additional parameters to characterize the shape of
-$(\zeta/s)(T)$. They are as follows,
+![formula](https://render.githubusercontent.com/render/math?math=(\zeta/s)(T)).
+They are as follows,
 
     1. <zeta_over_s_max>
     2. <zeta_over_s_T_peak_in_GeV>
@@ -273,9 +277,11 @@ the build folder,
 ```
 
 With the produced `hadron_list.dat` file, the users can apply their own
-analysis script to compute particle spectra, mean $p_T$, and
-anisotropic flow coefficients $v_n$. An example of the analysis code is
-`analyze_particle_spectra_and_vn.ipynb`.
+analysis script to compute particle spectra, mean
+![formula](https://render.githubusercontent.com/render/math?math=p_T), and
+anisotropic flow coefficients
+![formula](https://render.githubusercontent.com/render/math?math=v_n).
+An example of the analysis code is `analyze_particle_spectra_and_vn.ipynb`.
 
 
 # HOMEWORK
@@ -286,14 +292,15 @@ Simulate a Pb+Pb collision in 20-30% centrality at 5.02 TeV. In order to
 compare simulations with different viscosity, we need to fix the
 random seed. You can choose your favorite number for the seed. (42?)
 
-* Compare the averaged temperature evolution with two choices of
-the specific bulk viscosity $\zeta/s(T)$
+* Compare the development of flow anisotropy as a function of proper time
+with two different shear viscosities
 
 * Compare the development of averaged radial with and without the specific
 bulk viscosity
 
-* Compare the development of flow anisotropy as a function of proper time
-with two different shear viscosities
+* Compare the averaged temperature evolution with two choices of
+the specific bulk viscosity
+![formula](https://render.githubusercontent.com/render/math?math=(\zeta/s)(T))
 
 
 ## 2. Produce animation for the temperature and flow velocity profiles in the transverse plane
@@ -313,5 +320,6 @@ We will select the most impressive ones and post them on the school website.
 To accumulate statistic, you can set `<nEvents>` to 50 and
 `<nReuseHydro>` to 50 in the xml file to avoid running 50 hydrodynamic
 simulations. With the generated `test_out.dat` file, apply `FinalStateHardon`
-and analysis the output to get $p_T$-spectra for charged hadrons and their
-flow anisotropy coefficients.
+and analysis the output to get
+![formula](https://render.githubusercontent.com/render/math?math=p_T)-spectra
+for charged hadrons and their flow anisotropy coefficients.
