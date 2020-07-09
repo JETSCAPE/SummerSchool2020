@@ -1,6 +1,11 @@
 # SMASH hadronic transport hands-on session
 
-Add your name to the [table](https://docs.google.com/spreadsheets/d/1f1M4vro1lFZnp80Dy0bE_XjYxMQid9oG9BgEMiO10-o/edit?usp=sharing) to mark your progress.
+Goals:
+1. Generate SMASH vtk output and look at visualizations of hadronic scattering
+2. Use SMASH as a hadronic afterburner, generate ROOT output of particles and collisions
+   and by analyzing it learn about chemical and kinetic freeze-out.
+
+To begin add your name to the [table](https://docs.google.com/spreadsheets/d/1f1M4vro1lFZnp80Dy0bE_XjYxMQid9oG9BgEMiO10-o/edit?usp=sharing) to mark your progress.
 Then follow the steps below.
 
 <details><summary> My personal docker cheat sheet </summary>
@@ -431,9 +436,10 @@ Let's look, for example, at pion transverse momentum spectra at midrapidity
 ```
   particles->Draw("sqrt(px * px + py * py)", "t == 100 && abs(0.5 * log((p0 + pz)/(p0 - pz)) < 1.0) && pdgcode == 211", "E");
 ```
+To compare different spectra use the plotting option `same`, like we did before.
 How much do pion spectra differ for the simulation with and without scattering? Repeat the same for kaons and protons.
 
-What can you conclude from this study? Let's discuss in the chat.
+What can you conclude from this study? Let's discuss it in the chat.
 
 1. How much does the hadronic rescattering change the spectra?
 2. What can you say about chemical freeze-out?
