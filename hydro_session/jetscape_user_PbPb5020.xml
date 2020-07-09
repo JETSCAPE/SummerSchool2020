@@ -1,0 +1,45 @@
+<?xml version="1.0"?>
+
+<jetscape>
+    <!-- General settings -->
+    <nEvents> 1 </nEvents>
+
+    <!-- fix the random seed -->
+    <Random>
+        <seed>23</seed>
+    </Random>
+
+    <!-- Inital State Module  -->
+    <IS>
+        <!-- set boost invariant simulation -->
+        <grid_max_z> 0.0 </grid_max_z>
+
+        <!-- Initial condition -->
+        <Trento>
+            <!-- sqrts is in GeV, cross-section is in mb -->
+            <!-- Here is an example for 20-30% Pb+Pb collisions at 2.76 TeV -->
+            <PhysicsInputs  projectile='Pb'
+                    target='Pb'
+                    sqrts='2760.'
+                    cross-section='6.4'
+                    normalization='13.9'>
+            </PhysicsInputs>
+            <CutInputs  centrality-low='20'
+                  centrality-high='30'>
+            </CutInputs>
+        </Trento>
+    </IS>
+
+    <!--Preequilibrium Dynamics Module -->
+    <Preequilibrium>
+        <NullPreDynamics> </NullPreDynamics>
+    </Preequilibrium>
+
+    <!-- Hydro  Module  -->
+    <Hydro>
+        <MUSIC>
+            <freezeout_temperature>0.150</freezeout_temperature>
+        </MUSIC>
+    </Hydro>
+
+</jetscape>
