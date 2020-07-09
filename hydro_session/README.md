@@ -73,6 +73,7 @@ To perform a test run for JETSCAPE with MUSIC in our working directory
 (**`~/JETSCAPE/JShydro`**),
 
 ```
+cd ~/JETSCAPE/JShydro
 ./runJetscape hydro_session/jetscape_user_MUSICTestRun.xml
 ```
 
@@ -82,6 +83,7 @@ Launch jupyter notebook inside the docker contain with the following command
 in our working directory (**`~/JETSCAPE/JShydro`**),
 
 ```
+cd ~/JETSCAPE/JShydro
 jupyter notebook --ip 0.0.0.0 --no-browser > notebook.log 2>&1 &
 cat notebook.log
 ```
@@ -131,6 +133,7 @@ we can specify the type of colliding nucleus, collision energy, and centrality.
 in our working directory (**`~/JETSCAPE/JShydro`**),
 
 ```
+cd ~/JETSCAPE/JShydro
 ./runJetscape hydro_session/jetscape_user_AuAu200.xml
 ./hydro_session/collect_results.sh Run_AuAu200_C0-10
 ```
@@ -182,7 +185,7 @@ Setting `<temperature_dependent_bulk_viscosity>` to **0** will set
 Users can run the JETSCAPE with two example config files,
 
 ```
-# run the following command in ~/JETSCAPE/JShydro
+cd ~/JETSCAPE/JShydro
 ./runJetscape hydro_session/jetscape_user_shear.xml
 ./hydro_session/collect_results.sh Run_shear_only
 ./runJetscape hydro_session/jetscape_user_shear_and_bulk.xml
@@ -224,7 +227,7 @@ They are as follows,
 Users can play with settings in `hydro_session/jetscape_user_TempDepVis.xml`.
 
 ```
-# run the following command in ~/JETSCAPE/JShydro
+cd ~/JETSCAPE/JShydro
 ./runJetscape hydro_session/jetscape_user_TempDepVis.xml
 ./hydro_session/collect_results.sh Run_TempDepVisc
 ```
@@ -276,6 +279,7 @@ the `test_out.dat` file. The users need to type in the following command at
 the build folder,
 
 ```
+cd ~/JETSCAPE/JShydro
 ./FinalStateHadrons test_out.dat hadron_list.dat
 ```
 
