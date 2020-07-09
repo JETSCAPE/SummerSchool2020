@@ -62,13 +62,11 @@ mkdir JShydro
 cd JShydro
 cmake .. -DUSE_MUSIC=ON -DUSE_ISS=ON
 make -j4
-```
-
-Copy the hand-on materials of this session to the build folder,
-
-```
 cp -r ../../SummerSchool/hydro_session .
 ```
+
+The last command copies the hand-on materials of this session to the working folder.
+
 
 ## <img src="figs/Goku.png" alt="Goku" width="60"/> A Test Run for JETSCAPE with MUSIC
 
