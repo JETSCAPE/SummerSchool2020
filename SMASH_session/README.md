@@ -435,9 +435,9 @@ How much do pion spectra differ for the simulation with and without scattering? 
 
 What can you conclude from this study? Let's discuss in the chat.
 
-# How much does the hadronic rescattering change the spectra?
-# What can you say about chemical freeze-out?
-# What can you say about kinetic freeze-out?
+1. How much does the hadronic rescattering change the spectra?
+2. What can you say about chemical freeze-out?
+3. What can you say about kinetic freeze-out?
 
 ----
 
