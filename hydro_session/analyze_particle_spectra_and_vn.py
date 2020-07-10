@@ -3,7 +3,6 @@
 from numpy import *
 from os import path
 home = path.expanduser("~")
-desktop = path.join(home, "Desktop")
 
 import matplotlib.pyplot as plt
 
@@ -33,7 +32,7 @@ mpl.rcParams['savefig.format'] = "pdf"
 
 EPS = 1e-16  # a small number
 # change the following line to your working folder
-working_path = "../"
+working_path = path.join(home, "JETSCAPE", "JShydro")
 
 
 class SimpleHistogram:

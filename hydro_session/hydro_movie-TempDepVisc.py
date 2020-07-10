@@ -149,12 +149,12 @@ X, Y = meshgrid(x, y)
 fig = plt.figure()
 cont = plt.contourf(X, Y, T[0, 0, :, :].transpose(), levels,
                     cmap=my_cmap, extend='both')
-time_text = plt.text(-6, 6, r"$\tau = {0:4.2f}$ fm/c".format(tau_list[0]))
+time_text = plt.text(-9.5, 8.5, r"$\tau = {0:4.2f}$ fm/c".format(tau_list[0]))
 cbar = fig.colorbar(cont)
 plt.xlabel(r"$x$ (fm)")
 plt.ylabel(r"$y$ (fm)")
-plt.xlim([-8, 8])
-plt.ylim([-8, 8])
+plt.xlim([-10, 10])
+plt.ylim([-10, 10])
 plt.tight_layout()
 
 # define animation function to update the contour at every time frame
@@ -170,7 +170,7 @@ def animate(i):
 anim = animation.FuncAnimation(fig, animate, frames=ntau, repeat=False)
 
 # save the animation to a file
-anim.save('RunTempDepVisc_animation_temperature.mp4', fps=24)
+anim.save('RunTempDepVisc_animation_temperature.mp4', fps=15)
 
 
 
@@ -192,11 +192,11 @@ Q = plt.quiver(X[::nskip, ::nskip], Y[::nskip, ::nskip],
               vy[0, 0, ::nskip, ::nskip],
               vx[0, 0, ::nskip, ::nskip],
               units='xy', scale_units='xy', scale=0.5, color='b')
-time_text = plt.text(-7.5, 6.5, r"$\tau = {0:4.2f}$ fm/c".format(tau_list[0]))
+time_text = plt.text(-9.5, 8.5, r"$\tau = {0:4.2f}$ fm/c".format(tau_list[0]))
 cbar = fig.colorbar(cont)
 plt.tight_layout()
-plt.xlim(-8, 8)
-plt.ylim(-8, 8)
+plt.xlim(-10, 10)
+plt.ylim(-10, 10)
 
 # update the temperature contour and velocity vector field 
 def update_quiver(num, Q, X, Y):
@@ -220,4 +220,4 @@ anim = animation.FuncAnimation(fig, update_quiver, fargs=(Q, X, Y),
                                frames=ntau, blit=False, repeat=False)
 
 # save the animation
-anim.save('RunTempDepVisc_animation_TwithFlow.mp4', fps=24)
+anim.save('RunTempDepVisc_animation_TwithFlow.mp4', fps=15)
