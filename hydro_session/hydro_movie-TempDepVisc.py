@@ -3,7 +3,6 @@
 from numpy import *
 from os import path
 home = path.expanduser("~")
-desktop = path.join(home, "Desktop")
 
 from matplotlib import animation
 import matplotlib.pyplot as plt
@@ -29,7 +28,7 @@ mpl.rcParams['legend.numpoints'] = 1
 mpl.rcParams['font.size'] = 15
 mpl.rcParams['savefig.format'] = "pdf"
 
-working_path = '../'
+working_path = path.join(home, "JETSCAPE", "JShydro")
 
 
 # define the contour levels
@@ -41,13 +40,14 @@ colors2 = plt.cm.jet(linspace(0., 1, 10))
 colors = vstack((colors1, colors2))
 my_cmap = mpl.colors.LinearSegmentedColormap.from_list('my_colormap', colors)
 
-# change the following line to your result folder
-TestResultFolder = "."
+
+# change the following line to your results folder
+ResultFolder = "Run_TempDepVisc"
 
 
 # load hydrodynamic evolution data
 data = fromfile(
-    path.join(working_path, TestResultFolder,
+    path.join(working_path, ResultFolder,
               "evolution_for_movie_xyeta_MUSIC.dat"), dtype=float32)
 
 # read header about the grid information
@@ -121,11 +121,11 @@ cbar = fig.colorbar(cont)
 plt.xlabel(r"$x$ (fm)")
 plt.ylabel(r"$y$ (fm)")
 plt.tight_layout()
-plt.savefig("TestRun_Temperature_Contour_XY")
+plt.savefig("RunTempDepVisc_Temperature_Contour_XY")
 
 
-print("Generate 2D contour plot for T tau vs x ...")
 # A 2D contour plot for $\tau$ vs x
+print("Generate 2D contour plot for T tau vs x ...")
 Tau, X = meshgrid(tau_list, x)
 
 y_idx = int(ny/2)  # pick the central point in the y direction
@@ -138,11 +138,11 @@ plt.xlabel(r"$\tau$ (fm/c)")
 plt.ylabel(r"$x$ (fm)")
 plt.text(1.0, 10.0, r'$y = {0:3.1f}$ fm'.format(y[y_idx]))
 plt.tight_layout()
-plt.savefig("TestRun_Temperature_Contour_TauX")
+plt.savefig("RunTempDepVisc_Temperature_Contour_TauX")
 
 
-print("Generate animation for T ...")
 # Generate a movie for temperature profile
+print("Generate animation for T ...")
 X, Y = meshgrid(x, y)
 
 # first plot the first frame as a contour plot
@@ -170,11 +170,12 @@ def animate(i):
 anim = animation.FuncAnimation(fig, animate, frames=ntau, repeat=False)
 
 # save the animation to a file
-anim.save('animation_temperature.mp4', fps=24)
+anim.save('RunTempDepVisc_animation_temperature.mp4', fps=24)
 
 
-print("Generate animation for T and flow ...")
+
 # Generate movie for temperature evolution with velocity field
+print("Generate animation for T and flow ...")
 nskip = 1  # only plot every other point to speed up the live animation
 
 X, Y = meshgrid(x, y)
@@ -219,4 +220,4 @@ anim = animation.FuncAnimation(fig, update_quiver, fargs=(Q, X, Y),
                                frames=ntau, blit=False, repeat=False)
 
 # save the animation
-anim.save('animation_TwithFlow.mp4', fps=24)
+anim.save('RunTempDepVisc_animation_TwithFlow.mp4', fps=24)

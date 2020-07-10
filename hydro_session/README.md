@@ -154,6 +154,17 @@ After it is opened inside your browser, you can execute
 the code cells one by one to generate 2D color contour plots as well as
 animation for the temperature and fluid velocity evolution.
 
+#### No Jupyter Notebook?
+
+If you can not use jupyter notebook, there are python scripts in the
+`hydro_session` folder to generate the same plots and animation. Users can
+run these scripts as follows,
+
+```
+cd ~/JETSCAPE/JShydro/hydro_session
+python3 hydro_evo_TestRun.py
+python3 hydro_movie_TestRun.py
+```
 
 ## <img src="figs/SSJ.gif" alt="SSJ" width="120"/> Change the collision systems
 
@@ -271,6 +282,8 @@ cd ~/JETSCAPE/JShydro
 ./hydro_session/collect_results.sh Run_TempDepVisc
 ```
 
+The associated plotting scripts are `hydro_movie-TempDepVisc.ipynb` and
+`hydro_movie-TempDepVisc.py`.
 
 ## Side notes
 

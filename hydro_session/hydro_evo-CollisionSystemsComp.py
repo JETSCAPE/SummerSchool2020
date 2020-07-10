@@ -1,9 +1,8 @@
-!#/usr/bin/env python3
+#!/usr/bin/env python3
 
 from numpy import *
 from os import path
 home = path.expanduser("~")
-desktop = path.join(home, "Desktop")
 
 import matplotlib.pyplot as plt
 
@@ -31,7 +30,7 @@ mpl.rcParams['legend.numpoints'] = 1
 mpl.rcParams['font.size'] = 15
 mpl.rcParams['savefig.format'] = "pdf"
 
-working_path = "../"
+working_path = path.join(home, "JETSCAPE/JShydro")
 
 
 # change the following line to your result folder(s)
@@ -100,4 +99,4 @@ plt.legend(loc=0)
 plt.xlabel(r"$\tau$ [fm]")
 plt.ylabel(r"$\langle \epsilon_p \rangle$")
 plt.tight_layout()
-plt.savefig("RunCollisionSystemComp_ecc_evo")
+plt.savefig("RunCollisionSystemComp_momentumaniso_evo")
