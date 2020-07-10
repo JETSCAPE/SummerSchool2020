@@ -99,7 +99,7 @@ docker run -it -v ~/jetscape-docker:/home/jetscape-user --name myJetscape --user
 **windows:**
 For example open a Windows command window using the 'cmd' command then:
 ```bash
-docker run -it -v <fullpath>/jetscape-docker:/home/jetscape-user --name myJetscape --user $(id -u):$(id -g) jetscape/base:v1.4
+docker run -it -v <fullpath>/jetscape-docker:/home/jetscape-user --name myJetscape jetscape/base:v1.4
 ```
 where `<fullpath>` would be c:\users\...\documents\ or wherever the `jetscape-docker` folder was placed.
 
