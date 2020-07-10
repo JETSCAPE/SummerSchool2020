@@ -378,7 +378,7 @@ We will select the most impressive ones and post them on the school website.
 
 To accumulate statistic, you can set `<nEvents>` to 50 and
 `<nReuseHydro>` to 50 in the xml file to avoid running 50 hydrodynamic
-simulations. With the generated `test_out.dat` file, apply `FinalStateHardon`
+simulations. With the generated `test_out.dat` file, apply `FinalStateHadron`
 and analysis the output to get
 ![formula](https://render.githubusercontent.com/render/math?math=p_T)-spectra
 for charged hadrons and their flow anisotropy coefficients.
