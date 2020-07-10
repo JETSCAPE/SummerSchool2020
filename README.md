@@ -96,6 +96,13 @@ docker run -it -v ~/jetscape-docker:/home/jetscape-user --name myJetscape jetsca
 docker run -it -v ~/jetscape-docker:/home/jetscape-user --name myJetscape --user $(id -u):$(id -g) jetscape/base:v1.4
 ```
 
+**windows:**
+For example open a Windows command window using the 'cmd' command then:
+```bash
+docker run -it -v <fullpath>/jetscape-docker:/home/jetscape-user --name myJetscape jetscape/base:v1.4
+```
+where `<fullpath>` would be c:\users\...\documents\ or wherever the `jetscape-docker` folder was placed.
+
 This is what the `docker run` command does:
 - `docker run` creates and starts a new docker container from a pre-defined image jetscape/base:v1.4, which will be downloaded if necessary.
 - `-it` runs the container with an interactive shell.
