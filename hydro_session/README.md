@@ -332,6 +332,7 @@ the build folder,
 
 ```
 cd ~/JETSCAPE/JShydro
+./runJetscape hydro_session/jetscape_user_MUSIC_and_iSS.xml
 ./FinalStateHadrons test_out.dat hadron_list.dat
 ```
 
