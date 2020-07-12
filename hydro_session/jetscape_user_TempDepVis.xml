@@ -27,7 +27,7 @@
                     target='Pb'
                     sqrts='5020'
                     cross-section='6.7'
-                    normalization='13.9'>
+                    normalization='18.4'>
             </PhysicsInputs>
             <CutInputs  centrality-low='20'
                   centrality-high='30'>
