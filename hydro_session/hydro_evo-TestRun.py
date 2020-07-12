@@ -30,7 +30,7 @@ mpl.rcParams['legend.numpoints'] = 1
 mpl.rcParams['font.size'] = 15
 mpl.rcParams['savefig.format'] = "pdf"
 
-working_path = path.join(home, "JETSCAPE/JShydro")
+working_path = path.join(home, "JETSCAPE/build")
 
 # change the following line to your result folder
 TestResultFoler = "."
