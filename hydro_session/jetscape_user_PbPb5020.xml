@@ -17,12 +17,12 @@
         <!-- Initial condition -->
         <Trento>
             <!-- sqrts is in GeV, cross-section is in mb -->
-            <!-- Here is an example for 20-30% Pb+Pb collisions at 2.76 TeV -->
+            <!-- Here is an example for 20-30% Pb+Pb collisions at 5.02 TeV -->
             <PhysicsInputs  projectile='Pb'
                     target='Pb'
                     sqrts='5020.'
                     cross-section='6.7'
-                    normalization='18.9'>
+                    normalization='18.4'>
             </PhysicsInputs>
             <CutInputs  centrality-low='20'
                   centrality-high='30'>

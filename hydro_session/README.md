@@ -210,7 +210,7 @@ cd ~/JETSCAPE/build
 The second command collects all the results into a new folder,
 `Run_AuAu200_C0-10`.
 
-<img src="figs/CollisionSystem_xml.png" alt="4" width="600"/>
+<img src="figs/CollisionSystem_xml_AuAu200.png" alt="4" width="600"/>
 
 [Run 2] Simulate a 20-30% Pb+Pb collisions at 5.02 TeV
 in our working directory (**`~/JETSCAPE/build`**),
@@ -220,12 +220,20 @@ in our working directory (**`~/JETSCAPE/build`**),
 ./hydro_session/collect_results.sh Run_PbPb5020_C20-30
 ```
 
+<img src="figs/CollisionSystem_xml_PbPb5020.png" alt="4" width="600"/>
+
 Now we can compare the evolution temperature and flow velocity between these
 two systems. You can visualize the comparison using the jupyter notebook,
 `hydro_evo-CollisionSystemsComp.ipynb`. Launch this notebook in your browser
 and run the code cells one-by-one to see the comparisons
-(same procedure as in the previous exercise).
+(same procedure as in the previous exercise). Alternatively, you can directly
+run `hydro_evo-CollisionSystemsComp.py` to generate the same plots.
 
+<img src="figs/CollisionSystem_jupyternotebook.png" alt="4" width="800"/>
+
+The results plots can be found in the `hydro_session` folder,
+
+<img src="figs/CollisionSystem_results.png" alt="4" width="800"/>
 
 ## <img src="figs/SSJB.gif" alt="SSJB" width="120"/> Study the effects of viscosity in hydrodynamic evolution
 
@@ -263,9 +271,16 @@ cd ~/JETSCAPE/build
 ./hydro_session/collect_results.sh Run_shear_and_bulk
 ```
 
-Comparison plots can be made using the jupyter notebook
-`hydro_evo-ViscosityComp.ipynb`.
+<img src="figs/ViscosityComp_xml.png" alt="4" width="600"/>
 
+Comparison plots can be made using the jupyter notebook
+`hydro_evo-ViscosityComp.ipynb` or `hydro_evo-ViscosityComp.py`.
+
+<img src="figs/ViscocityComp_jupyternotebook.png" alt="4" width="800"/>
+
+The resulting plots can be found under the `hydro_session` folder.
+
+<img src="figs/ViscosityComp_results.png" alt="4" width="800"/> 
 
 ## <img src="figs/UltraInstinct.gif" alt="UI" width="140"/> Temperature dependent $(\eta/s)(T)$ and $(\zeta/s)(T)$
 
@@ -295,7 +310,11 @@ They are as follows,
     3. <zeta_over_s_width_in_GeV>
     4. <zeta_over_s_lambda_asymm>
 
+<img src="figs/TempVis_vis.png" alt="4" width="600"/> 
+
 Users can play with settings in `hydro_session/jetscape_user_TempDepVis.xml`.
+
+<img src="figs/TempVisc_xml.png" alt="4" width="800"/> 
 
 ```
 cd ~/JETSCAPE/build
@@ -303,8 +322,14 @@ cd ~/JETSCAPE/build
 ./hydro_session/collect_results.sh Run_TempDepVisc
 ```
 
-The associated plotting scripts are `hydro_movie-TempDepVisc.ipynb` and
+
+The associated ploting scripts are `hydro_movie-TempDepVisc.ipynb` and
 `hydro_movie-TempDepVisc.py`.
+
+<img src="figs/TempVis_jupyternotebook.png" alt="4" width="800"/> 
+
+<img src="figs/TempVis_results.png" alt="4" width="800"/> 
+
 
 ## Side notes
 
@@ -318,6 +343,14 @@ Initial state module, between `<IS>` and `</IS>`, also define the 3D grid
 that we would like to simulate hydrodynamic evolution. If one set
 `grid_max_z` to 0, the JETSCAPE framework will perform a (2+1) hydrodynamic
 simulations assuming longitudinal boost-invariant.
+
+Cheet sheet for normalization factors in `Trento`,
+
+| Collision sytem  | Collision energy (GeV)  |  norm factor |
+|:---:|:---:|:---:|
+| Au+Au  | 200   | 5.7  |
+| Pb+Pb  | 2760  | 13.9 |
+| Pb+Pb  | 5020  | 18.4 |
 
 Finally, the user can specify a random seed for the entire simulation.
 This is specified inside the block `<Random>` in the xml file. If the
@@ -356,14 +389,18 @@ cd ~/JETSCAPE/build
 ./runJetscape hydro_session/jetscape_user_MUSIC_and_iSS.xml
 ./FinalStateHadrons test_out.dat hadron_list.dat
 ```
+<img src="figs/MUSIC_and_iSS_xml.png" alt="4" width="800"/> 
+
+<img src="figs/MUSIC_and_iSS_command.png" alt="4" width="800"/> 
 
 With the produced `hadron_list.dat` file, the users can apply their own
 analysis script to compute particle spectra, mean
 ![formula](https://render.githubusercontent.com/render/math?math=p_T), and
 anisotropic flow coefficients
 ![formula](https://render.githubusercontent.com/render/math?math=v_n).
-An example of the analysis code is `analyze_particle_spectra_and_vn.ipynb`.
+Example analysis codes are `analyze_particle_spectra_and_vn.ipynb` and `analyze_particle_spectra_and_vn.py`.
 
+<img src="figs/MUSIC_and_iSS_results.png" alt="4" width="800"/> 
 
 # HOMEWORK
 
