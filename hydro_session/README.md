@@ -50,6 +50,9 @@ You need to make sure the following folders are present,
 * JETSCAPE
 * SummerSchool2020
 
+<img src="figs/jetscape-docker_folder_content.png" alt="1" width="800"/>
+
+
 In this session, we need to launch a docker container that supports the jupyter
 notebook. Please use the following command:
 
@@ -83,8 +86,11 @@ cd ~/JETSCAPE/external_packages
 ls
 ```
 
-Please check the folder `music` and `iSS` are present. If not, please
-run the following commands,
+Please check the folder `music` and `iSS` are present.
+
+<img src="figs/jetscape-external_folder_content.png" alt="2" width="800"/>
+
+If not, please run the following commands,
 
 ```
 ./get_music.sh
@@ -106,6 +112,9 @@ cp -r ../../SummerSchool2020/hydro_session .
 
 The last command copies the hand-on materials of this session to the working folder.
 
+<img src="figs/jetscape-build_folder_content.png" alt="3" width="800"/>
+
+
 ## <img src="figs/Goku.png" alt="Goku" width="60"/> A Test Run for JETSCAPE with MUSIC
 
 To perform a test run for JETSCAPE with MUSIC in our working directory
@@ -115,6 +124,9 @@ To perform a test run for JETSCAPE with MUSIC in our working directory
 cd ~/JETSCAPE/build
 ./runJetscape hydro_session/jetscape_user_MUSICTestRun.xml
 ```
+<img src="figs/TestRun_command.png" alt="4" width="800"/>
+
+<img src="figs/TestRunxml_annotated.png" alt="4" width="600"/>
 
 ### Visualization with Jupyter Notebook
 
@@ -136,15 +148,19 @@ If your terminal does not recognize html addresses,
 you can open your browser and enter the following address,
 `http://127.0.0.1:8888/?token=...`
 
+<img src="figs/jupyternotebook_startup.png" alt="4" width="800"/>
+
+<img src="figs/jupyternotebook_startup_window.png" alt="4" width="800"/>
 
 #### 1. Plot averaged temperature and flow velocity evolution
 
 In your browser, we first go into the `hydro_session` folder *(in your browser)*.
 We can open the notebook `hydro_evo_TestRun.ipynb` by click on it inside
 the browser. Once the notebook is opened, the user can execute every cell
-in this notebook one-by-one. Press `shift+enter` to execute the cell block
+in this notebook one-by-one. Press **`shift+enter`** to execute the cell block
 in the notebook.
 
+<img src="figs/jupyternotebook_start_TestRun_evo_notebook.png" alt="4" width="800"/>
 
 #### 2. Animation of averaged temperature and flow velocity evolution
 
@@ -154,7 +170,9 @@ After it is opened inside your browser, you can execute
 the code cells one by one to generate 2D color contour plots as well as
 animation for the temperature and fluid velocity evolution.
 
-#### No Jupyter Notebook?
+<img src="figs/jupyternotebook_start_TestRun_movie_notebook.png" alt="4" width="800"/>
+
+### No Jupyter Notebook?
 
 If you can not use jupyter notebook, there are python scripts in the
 `hydro_session` folder to generate the same plots and animation. Users can
@@ -162,9 +180,10 @@ run these scripts as follows,
 
 ```
 cd ~/JETSCAPE/build/hydro_session
-python3 hydro_evo_TestRun.py
-python3 hydro_movie_TestRun.py
+python3 hydro_evo-TestRun.py
+python3 hydro_movie-TestRun.py
 ```
+<img src="figs/TestRun_results.png" alt="4" width="800"/>
 
 ## <img src="figs/SSJ.gif" alt="SSJ" width="120"/> Change the collision systems
 
@@ -190,6 +209,8 @@ cd ~/JETSCAPE/build
 
 The second command collects all the results into a new folder,
 `Run_AuAu200_C0-10`.
+
+<img src="figs/CollisionSystem_xml.png" alt="4" width="600"/>
 
 [Run 2] Simulate a 20-30% Pb+Pb collisions at 5.02 TeV
 in our working directory (**`~/JETSCAPE/build`**),

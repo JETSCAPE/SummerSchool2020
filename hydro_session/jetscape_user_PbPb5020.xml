@@ -20,9 +20,9 @@
             <!-- Here is an example for 20-30% Pb+Pb collisions at 2.76 TeV -->
             <PhysicsInputs  projectile='Pb'
                     target='Pb'
-                    sqrts='2760.'
-                    cross-section='6.4'
-                    normalization='13.9'>
+                    sqrts='5020.'
+                    cross-section='6.7'
+                    normalization='18.9'>
             </PhysicsInputs>
             <CutInputs  centrality-low='20'
                   centrality-high='30'>
