@@ -74,7 +74,7 @@ you can use `sudo` in front of the docker run command.
 
 ## Build JETSCAPE with MUSIC and iSS
 
-We will do all of our exercises in the **`JETSCAPE/JShydro`** directory.
+We will do all of our exercises in the **`JETSCAPE/build`** directory.
 Please make sure all the external code packages (MUSIC and iSS) have been
 downloaded. You can check this by the following commands,
 
@@ -97,8 +97,8 @@ the working directory,
 
 ```
 cd ~/JETSCAPE
-mkdir JShydro
-cd JShydro
+mkdir -p build
+cd build
 cmake .. -DUSE_MUSIC=ON -DUSE_ISS=ON
 make -j4
 cp -r ../../SummerSchool2020/hydro_session .
@@ -109,20 +109,20 @@ The last command copies the hand-on materials of this session to the working fol
 ## <img src="figs/Goku.png" alt="Goku" width="60"/> A Test Run for JETSCAPE with MUSIC
 
 To perform a test run for JETSCAPE with MUSIC in our working directory
-(**`~/JETSCAPE/JShydro`**),
+(**`~/JETSCAPE/build`**),
 
 ```
-cd ~/JETSCAPE/JShydro
+cd ~/JETSCAPE/build
 ./runJetscape hydro_session/jetscape_user_MUSICTestRun.xml
 ```
 
 ### Visualization with Jupyter Notebook
 
 Launch jupyter notebook inside the docker contain with the following command
-in our working directory (**`~/JETSCAPE/JShydro`**),
+in our working directory (**`~/JETSCAPE/build`**),
 
 ```
-cd ~/JETSCAPE/JShydro
+cd ~/JETSCAPE/build
 jupyter notebook --ip 0.0.0.0 --no-browser > notebook.log 2>&1 &
 cat notebook.log
 ```
@@ -161,7 +161,7 @@ If you can not use jupyter notebook, there are python scripts in the
 run these scripts as follows,
 
 ```
-cd ~/JETSCAPE/JShydro/hydro_session
+cd ~/JETSCAPE/build/hydro_session
 python3 hydro_evo_TestRun.py
 python3 hydro_movie_TestRun.py
 ```
@@ -180,10 +180,10 @@ his/her desired collision system. In between **`<Trento>`** and **`<\Trento>`**,
 we can specify the type of colliding nucleus, collision energy, and centrality.
 
 [Run 1] Simulate a 0-10% Au+Au collision at 200 GeV 
-in our working directory (**`~/JETSCAPE/JShydro`**),
+in our working directory (**`~/JETSCAPE/build`**),
 
 ```
-cd ~/JETSCAPE/JShydro
+cd ~/JETSCAPE/build
 ./runJetscape hydro_session/jetscape_user_AuAu200.xml
 ./hydro_session/collect_results.sh Run_AuAu200_C0-10
 ```
@@ -192,7 +192,7 @@ The second command collects all the results into a new folder,
 `Run_AuAu200_C0-10`.
 
 [Run 2] Simulate a 20-30% Pb+Pb collisions at 5.02 TeV
-in our working directory (**`~/JETSCAPE/JShydro`**),
+in our working directory (**`~/JETSCAPE/build`**),
 
 ```
 ./runJetscape hydro_session/jetscape_user_PbPb5020.xml
@@ -235,7 +235,7 @@ Setting `<temperature_dependent_bulk_viscosity>` to **0** will set
 Users can run the JETSCAPE with two example config files,
 
 ```
-cd ~/JETSCAPE/JShydro
+cd ~/JETSCAPE/build
 ./runJetscape hydro_session/jetscape_user_shear.xml
 ./hydro_session/collect_results.sh Run_shear_only
 ./runJetscape hydro_session/jetscape_user_shear_and_bulk.xml
@@ -277,7 +277,7 @@ They are as follows,
 Users can play with settings in `hydro_session/jetscape_user_TempDepVis.xml`.
 
 ```
-cd ~/JETSCAPE/JShydro
+cd ~/JETSCAPE/build
 ./runJetscape hydro_session/jetscape_user_TempDepVis.xml
 ./hydro_session/collect_results.sh Run_TempDepVisc
 ```
@@ -331,7 +331,7 @@ the `test_out.dat` file. The users need to type in the following command at
 the build folder,
 
 ```
-cd ~/JETSCAPE/JShydro
+cd ~/JETSCAPE/build
 ./runJetscape hydro_session/jetscape_user_MUSIC_and_iSS.xml
 ./FinalStateHadrons test_out.dat hadron_list.dat
 ```
