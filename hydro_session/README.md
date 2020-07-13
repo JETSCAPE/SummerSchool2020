@@ -346,11 +346,13 @@ simulations assuming longitudinal boost-invariant.
 
 Cheet sheet for normalization factors in `Trento`,
 
-| Collision sytem  | Collision energy (GeV)  |  norm factor |
-|:---:|:---:|:---:|
-| Au+Au  | 200   | 5.7  |
-| Pb+Pb  | 2760  | 13.9 |
-| Pb+Pb  | 5020  | 18.4 |
+| Collision sytem  | Collision energy (GeV)  |  norm factor | cross section (mb) |
+|:---:|:---:|:---:|:---:|
+| Au+Au  | 200   | 5.7  | 42 |
+| Pb+Pb  | 2760  | 13.9 | 62 |
+| Pb+Pb  | 5020  | 18.4 | 67 |
+
+Available nucleus type in `Trento`: p, d, Cu, Xe, Au, Pb, U
 
 Finally, the user can specify a random seed for the entire simulation.
 This is specified inside the block `<Random>` in the xml file. If the
@@ -363,14 +365,22 @@ study the effect of viscosity during the hydrodynamic evolution.
 After each run, please create a result folder with the viscosity information
 and move the following three files into the result folder,
 
-    * eccentricities_evo_eta_-0.5_0.5.dat
-    This file records the evolution of spacial eccentricity of the fireball
-    * momentum_anisotropy_eta_-0.5_0.5.dat
-    This file has the evolution information about the momentum anisotropy,
-    average velocity, and average temperature.
-    * evolution_for_movie_xyeta_MUSIC.dat
-    This file contains the evolution history of fluid cells above T = 130 MeV.
+* `eccentricities_evo_eta_-0.5_0.5.dat`
 
+This file records the evolution of spacial eccentricity of the fireball.
+Format: `# tau(fm)  ecc_n(cos)  ecc_n(sin) (n=1-6)`
+
+* `momentum_anisotropy_eta_-0.5_0.5.dat`
+
+This file has the evolution information about the momentum anisotropy,
+average velocity, and average temperature.
+Format: `# tau(fm)  epsilon_p(ideal) epsilon_p(shear) epsilon_p(full) ecc_2  ecc_3  R_Pi  gamma  T[GeV]`
+
+* `evolution_for_movie_xyeta_MUSIC.dat`
+
+This file contains the evolution history of fluid cells above T = 130 MeV.
+Every fluid cell includes the following information:
+`itau  ix  iy  ieta  volume[fm^4]  e[GeV/fm^3]  rho_B[1/fm^3]  T[GeV]  mu_B[GeV]  u^x  u^y \tau*u^\eta  T^{\tau t}[GeV/fm^3]  J^\tau[1/fm^3]` 
 
 ## [Bonus] Produce hadrons from hydrodynamics
 
