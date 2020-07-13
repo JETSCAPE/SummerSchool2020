@@ -74,7 +74,7 @@ Launch jupyter notebook inside the docker contain with the following command,
 jupyter-notebook --ip 0.0.0.0 --no-browser > notebook.log 2>&1 &
 cat notebook.log
 ```
-Open the displayed　address `http://127.0.0.1:8888/?token=...` in your browser. 
+Open the displayed address `http://127.0.0.1:8888/?token=...` in your browser. 
 Then please go to the folder `med_res_session`, open `hydro_movie-medium_response.ipynb`, and follow the instructions. 
 
 
