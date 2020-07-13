@@ -32,7 +32,7 @@ mpl.rcParams['savefig.format'] = "pdf"
 
 EPS = 1e-16  # a small number
 # change the following line to your working folder
-working_path = path.join(home, "JETSCAPE", "JShydro")
+working_path = path.join(home, "JETSCAPE", "build")
 
 
 class SimpleHistogram:

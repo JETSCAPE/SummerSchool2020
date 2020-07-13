@@ -50,6 +50,9 @@ You need to make sure the following folders are present,
 * JETSCAPE
 * SummerSchool2020
 
+<img src="figs/jetscape-docker_folder_content.png" alt="1" width="800"/>
+
+
 In this session, we need to launch a docker container that supports the jupyter
 notebook. Please use the following command:
 
@@ -74,7 +77,7 @@ you can use `sudo` in front of the docker run command.
 
 ## Build JETSCAPE with MUSIC and iSS
 
-We will do all of our exercises in the **`JETSCAPE/JShydro`** directory.
+We will do all of our exercises in the **`JETSCAPE/build`** directory.
 Please make sure all the external code packages (MUSIC and iSS) have been
 downloaded. You can check this by the following commands,
 
@@ -83,8 +86,11 @@ cd ~/JETSCAPE/external_packages
 ls
 ```
 
-Please check the folder `music` and `iSS` are present. If not, please
-run the following commands,
+Please check the folder `music` and `iSS` are present.
+
+<img src="figs/jetscape-external_folder_content.png" alt="2" width="800"/>
+
+If not, please run the following commands,
 
 ```
 ./get_music.sh
@@ -97,8 +103,8 @@ the working directory,
 
 ```
 cd ~/JETSCAPE
-mkdir JShydro
-cd JShydro
+mkdir -p build
+cd build
 cmake .. -DUSE_MUSIC=ON -DUSE_ISS=ON
 make -j4
 cp -r ../../SummerSchool2020/hydro_session .
@@ -106,23 +112,29 @@ cp -r ../../SummerSchool2020/hydro_session .
 
 The last command copies the hand-on materials of this session to the working folder.
 
+<img src="figs/jetscape-build_folder_content.png" alt="3" width="800"/>
+
+
 ## <img src="figs/Goku.png" alt="Goku" width="60"/> A Test Run for JETSCAPE with MUSIC
 
 To perform a test run for JETSCAPE with MUSIC in our working directory
-(**`~/JETSCAPE/JShydro`**),
+(**`~/JETSCAPE/build`**),
 
 ```
-cd ~/JETSCAPE/JShydro
+cd ~/JETSCAPE/build
 ./runJetscape hydro_session/jetscape_user_MUSICTestRun.xml
 ```
+<img src="figs/TestRun_command.png" alt="4" width="800"/>
+
+<img src="figs/TestRunxml_annotated.png" alt="4" width="600"/>
 
 ### Visualization with Jupyter Notebook
 
 Launch jupyter notebook inside the docker contain with the following command
-in our working directory (**`~/JETSCAPE/JShydro`**),
+in our working directory (**`~/JETSCAPE/build`**),
 
 ```
-cd ~/JETSCAPE/JShydro
+cd ~/JETSCAPE/build
 jupyter notebook --ip 0.0.0.0 --no-browser > notebook.log 2>&1 &
 cat notebook.log
 ```
@@ -136,15 +148,19 @@ If your terminal does not recognize html addresses,
 you can open your browser and enter the following address,
 `http://127.0.0.1:8888/?token=...`
 
+<img src="figs/jupyternotebook_startup.png" alt="4" width="800"/>
+
+<img src="figs/jupyternotebook_startup_window.png" alt="4" width="800"/>
 
 #### 1. Plot averaged temperature and flow velocity evolution
 
 In your browser, we first go into the `hydro_session` folder *(in your browser)*.
 We can open the notebook `hydro_evo_TestRun.ipynb` by click on it inside
 the browser. Once the notebook is opened, the user can execute every cell
-in this notebook one-by-one. Press `shift+enter` to execute the cell block
+in this notebook one-by-one. Press **`shift+enter`** to execute the cell block
 in the notebook.
 
+<img src="figs/jupyternotebook_start_TestRun_evo_notebook.png" alt="4" width="800"/>
 
 #### 2. Animation of averaged temperature and flow velocity evolution
 
@@ -154,17 +170,20 @@ After it is opened inside your browser, you can execute
 the code cells one by one to generate 2D color contour plots as well as
 animation for the temperature and fluid velocity evolution.
 
-#### No Jupyter Notebook?
+<img src="figs/jupyternotebook_start_TestRun_movie_notebook.png" alt="4" width="800"/>
+
+### No Jupyter Notebook?
 
 If you can not use jupyter notebook, there are python scripts in the
 `hydro_session` folder to generate the same plots and animation. Users can
 run these scripts as follows,
 
 ```
-cd ~/JETSCAPE/JShydro/hydro_session
-python3 hydro_evo_TestRun.py
-python3 hydro_movie_TestRun.py
+cd ~/JETSCAPE/build/hydro_session
+python3 hydro_evo-TestRun.py
+python3 hydro_movie-TestRun.py
 ```
+<img src="figs/TestRun_results.png" alt="4" width="800"/>
 
 ## <img src="figs/SSJ.gif" alt="SSJ" width="120"/> Change the collision systems
 
@@ -180,10 +199,10 @@ his/her desired collision system. In between **`<Trento>`** and **`<\Trento>`**,
 we can specify the type of colliding nucleus, collision energy, and centrality.
 
 [Run 1] Simulate a 0-10% Au+Au collision at 200 GeV 
-in our working directory (**`~/JETSCAPE/JShydro`**),
+in our working directory (**`~/JETSCAPE/build`**),
 
 ```
-cd ~/JETSCAPE/JShydro
+cd ~/JETSCAPE/build
 ./runJetscape hydro_session/jetscape_user_AuAu200.xml
 ./hydro_session/collect_results.sh Run_AuAu200_C0-10
 ```
@@ -191,20 +210,30 @@ cd ~/JETSCAPE/JShydro
 The second command collects all the results into a new folder,
 `Run_AuAu200_C0-10`.
 
+<img src="figs/CollisionSystem_xml_AuAu200.png" alt="4" width="600"/>
+
 [Run 2] Simulate a 20-30% Pb+Pb collisions at 5.02 TeV
-in our working directory (**`~/JETSCAPE/JShydro`**),
+in our working directory (**`~/JETSCAPE/build`**),
 
 ```
 ./runJetscape hydro_session/jetscape_user_PbPb5020.xml
 ./hydro_session/collect_results.sh Run_PbPb5020_C20-30
 ```
 
+<img src="figs/CollisionSystem_xml_PbPb5020.png" alt="4" width="600"/>
+
 Now we can compare the evolution temperature and flow velocity between these
 two systems. You can visualize the comparison using the jupyter notebook,
 `hydro_evo-CollisionSystemsComp.ipynb`. Launch this notebook in your browser
 and run the code cells one-by-one to see the comparisons
-(same procedure as in the previous exercise).
+(same procedure as in the previous exercise). Alternatively, you can directly
+run `hydro_evo-CollisionSystemsComp.py` to generate the same plots.
 
+<img src="figs/CollisionSystem_jupyternotebook.png" alt="4" width="800"/>
+
+The results plots can be found in the `hydro_session` folder,
+
+<img src="figs/CollisionSystem_results.png" alt="4" width="800"/>
 
 ## <img src="figs/SSJB.gif" alt="SSJB" width="120"/> Study the effects of viscosity in hydrodynamic evolution
 
@@ -235,16 +264,23 @@ Setting `<temperature_dependent_bulk_viscosity>` to **0** will set
 Users can run the JETSCAPE with two example config files,
 
 ```
-cd ~/JETSCAPE/JShydro
+cd ~/JETSCAPE/build
 ./runJetscape hydro_session/jetscape_user_shear.xml
 ./hydro_session/collect_results.sh Run_shear_only
 ./runJetscape hydro_session/jetscape_user_shear_and_bulk.xml
 ./hydro_session/collect_results.sh Run_shear_and_bulk
 ```
 
-Comparison plots can be made using the jupyter notebook
-`hydro_evo-ViscosityComp.ipynb`.
+<img src="figs/ViscosityComp_xml.png" alt="4" width="600"/>
 
+Comparison plots can be made using the jupyter notebook
+`hydro_evo-ViscosityComp.ipynb` or `hydro_evo-ViscosityComp.py`.
+
+<img src="figs/ViscocityComp_jupyternotebook.png" alt="4" width="800"/>
+
+The resulting plots can be found under the `hydro_session` folder.
+
+<img src="figs/ViscosityComp_results.png" alt="4" width="800"/> 
 
 ## <img src="figs/UltraInstinct.gif" alt="UI" width="140"/> Temperature dependent $(\eta/s)(T)$ and $(\zeta/s)(T)$
 
@@ -274,16 +310,26 @@ They are as follows,
     3. <zeta_over_s_width_in_GeV>
     4. <zeta_over_s_lambda_asymm>
 
+<img src="figs/TempVis_vis.png" alt="4" width="600"/> 
+
 Users can play with settings in `hydro_session/jetscape_user_TempDepVis.xml`.
 
+<img src="figs/TempVisc_xml.png" alt="4" width="800"/> 
+
 ```
-cd ~/JETSCAPE/JShydro
+cd ~/JETSCAPE/build
 ./runJetscape hydro_session/jetscape_user_TempDepVis.xml
 ./hydro_session/collect_results.sh Run_TempDepVisc
 ```
 
-The associated plotting scripts are `hydro_movie-TempDepVisc.ipynb` and
+
+The associated ploting scripts are `hydro_movie-TempDepVisc.ipynb` and
 `hydro_movie-TempDepVisc.py`.
+
+<img src="figs/TempVis_jupyternotebook.png" alt="4" width="800"/> 
+
+<img src="figs/TempVis_results.png" alt="4" width="800"/> 
+
 
 ## Side notes
 
@@ -297,6 +343,14 @@ Initial state module, between `<IS>` and `</IS>`, also define the 3D grid
 that we would like to simulate hydrodynamic evolution. If one set
 `grid_max_z` to 0, the JETSCAPE framework will perform a (2+1) hydrodynamic
 simulations assuming longitudinal boost-invariant.
+
+Cheet sheet for normalization factors in `Trento`,
+
+| Collision sytem  | Collision energy (GeV)  |  norm factor |
+|:---:|:---:|:---:|
+| Au+Au  | 200   | 5.7  |
+| Pb+Pb  | 2760  | 13.9 |
+| Pb+Pb  | 5020  | 18.4 |
 
 Finally, the user can specify a random seed for the entire simulation.
 This is specified inside the block `<Random>` in the xml file. If the
@@ -331,18 +385,22 @@ the `test_out.dat` file. The users need to type in the following command at
 the build folder,
 
 ```
-cd ~/JETSCAPE/JShydro
+cd ~/JETSCAPE/build
 ./runJetscape hydro_session/jetscape_user_MUSIC_and_iSS.xml
 ./FinalStateHadrons test_out.dat hadron_list.dat
 ```
+<img src="figs/MUSIC_and_iSS_xml.png" alt="4" width="800"/> 
+
+<img src="figs/MUSIC_and_iSS_command.png" alt="4" width="800"/> 
 
 With the produced `hadron_list.dat` file, the users can apply their own
 analysis script to compute particle spectra, mean
 ![formula](https://render.githubusercontent.com/render/math?math=p_T), and
 anisotropic flow coefficients
 ![formula](https://render.githubusercontent.com/render/math?math=v_n).
-An example of the analysis code is `analyze_particle_spectra_and_vn.ipynb`.
+Example analysis codes are `analyze_particle_spectra_and_vn.ipynb` and `analyze_particle_spectra_and_vn.py`.
 
+<img src="figs/MUSIC_and_iSS_results.png" alt="4" width="800"/> 
 
 # HOMEWORK
 

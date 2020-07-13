@@ -28,7 +28,7 @@ mpl.rcParams['legend.numpoints'] = 1
 mpl.rcParams['font.size'] = 15
 mpl.rcParams['savefig.format'] = "pdf"
 
-working_path = path.join(home, "JETSCAPE", "JShydro")
+working_path = path.join(home, "JETSCAPE", "build")
 
 
 # define the contour levels
@@ -170,7 +170,7 @@ def animate(i):
 anim = animation.FuncAnimation(fig, animate, frames=ntau, repeat=False)
 
 # save the animation to a file
-anim.save('RunTempDepVisc_animation_temperature.mp4', fps=15)
+anim.save('RunTempDepVisc_animation_T.mp4', fps=15)
 
 
 
