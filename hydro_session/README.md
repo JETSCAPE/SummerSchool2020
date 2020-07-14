@@ -300,6 +300,9 @@ ineffective. The users need to further specify the following four parameters,
 to characterize the temperature dependence of
 ![formula](https://render.githubusercontent.com/render/math?math=(\eta/s)(T)).
 
+<img src="figs/eta_over_s_T.png" alt="4" width="400"/> 
+
+
 Siimilar to the case for $(\eta/s)(T)$, the uses can set the parameter
 `<temperature_dependent_bulk_viscosity>` to **3** in the xml file to include
 a temperature dependent $(\zeta/s)(T)$.
@@ -312,6 +315,10 @@ They are as follows,
     2. <zeta_over_s_T_peak_in_GeV>
     3. <zeta_over_s_width_in_GeV>
     4. <zeta_over_s_lambda_asymm>
+
+The parameterization is
+
+<img src="figs/zeta_over_s_T.png" alt="4" width="400"/> 
 
 <img src="figs/TempVis_vis.png" alt="4" width="600"/> 
 
