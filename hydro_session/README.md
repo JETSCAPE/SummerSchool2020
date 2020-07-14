@@ -198,7 +198,7 @@ one can modify model parameters for the initial state module to simulate
 his/her desired collision system. In between **`<Trento>`** and **`<\Trento>`**,
 we can specify the type of colliding nucleus, collision energy, and centrality.
 
-[Run 1] Simulate a 0-10% Au+Au collision at 200 GeV 
+**[Run 1]** Simulate a 0-10% Au+Au collision at 200 GeV 
 in our working directory (**`~/JETSCAPE/build`**),
 
 ```
@@ -207,12 +207,15 @@ cd ~/JETSCAPE/build
 ./hydro_session/collect_results.sh Run_AuAu200_C0-10
 ```
 
-The second command collects all the results into a new folder,
+The last command collects all the results into a new folder,
 `Run_AuAu200_C0-10`.
 
 <img src="figs/CollisionSystem_xml_AuAu200.png" alt="4" width="600"/>
 
-[Run 2] Simulate a 20-30% Pb+Pb collisions at 5.02 TeV
+Here the nucleon-nucleon cross section is specified in the unit (fm^2)
+(1[fm^2]= 10[mb])
+
+**[Run 2]** Simulate a 20-30% Pb+Pb collisions at 5.02 TeV
 in our working directory (**`~/JETSCAPE/build`**),
 
 ```
@@ -346,11 +349,13 @@ simulations assuming longitudinal boost-invariant.
 
 Cheet sheet for normalization factors in `Trento`,
 
-| Collision sytem  | Collision energy (GeV)  |  norm factor |
-|:---:|:---:|:---:|
-| Au+Au  | 200   | 5.7  |
-| Pb+Pb  | 2760  | 13.9 |
-| Pb+Pb  | 5020  | 18.4 |
+| Collision sytem  | Collision energy (GeV)  |  norm factor | cross section (mb) |
+|:---:|:---:|:---:|:---:|
+| Au+Au  | 200   | 5.7  | 42 |
+| Pb+Pb  | 2760  | 13.9 | 62 |
+| Pb+Pb  | 5020  | 18.4 | 67 |
+
+Available nucleus type in `Trento`: p, d, Cu, Xe, Au, Pb, U
 
 Finally, the user can specify a random seed for the entire simulation.
 This is specified inside the block `<Random>` in the xml file. If the
@@ -363,14 +368,22 @@ study the effect of viscosity during the hydrodynamic evolution.
 After each run, please create a result folder with the viscosity information
 and move the following three files into the result folder,
 
-    * eccentricities_evo_eta_-0.5_0.5.dat
-    This file records the evolution of spacial eccentricity of the fireball
-    * momentum_anisotropy_eta_-0.5_0.5.dat
-    This file has the evolution information about the momentum anisotropy,
-    average velocity, and average temperature.
-    * evolution_for_movie_xyeta_MUSIC.dat
-    This file contains the evolution history of fluid cells above T = 130 MeV.
+* `eccentricities_evo_eta_-0.5_0.5.dat`
 
+This file records the evolution of spacial eccentricity of the fireball.
+Format: `# tau(fm)  ecc_n(cos)  ecc_n(sin) (n=1-6)`
+
+* `momentum_anisotropy_eta_-0.5_0.5.dat`
+
+This file has the evolution information about the momentum anisotropy,
+average velocity, and average temperature.
+Format: `# tau(fm)  epsilon_p(ideal) epsilon_p(shear) epsilon_p(full) ecc_2  ecc_3  R_Pi  gamma  T[GeV]`
+
+* `evolution_for_movie_xyeta_MUSIC.dat`
+
+This file contains the evolution history of fluid cells above T = 130 MeV.
+Every fluid cell includes the following information:
+`itau  ix  iy  ieta  volume[fm^4]  e[GeV/fm^3]  rho_B[1/fm^3]  T[GeV]  mu_B[GeV]  u^x  u^y \tau*u^\eta  T^{\tau t}[GeV/fm^3]  J^\tau[1/fm^3]` 
 
 ## [Bonus] Produce hadrons from hydrodynamics
 
