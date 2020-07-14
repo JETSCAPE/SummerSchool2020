@@ -212,7 +212,7 @@ The last command collects all the results into a new folder,
 
 <img src="figs/CollisionSystem_xml_AuAu200.png" alt="4" width="600"/>
 
-Here the cross section is specified in the unit (fm^2) (1[fm^2]= 0.1[mb])
+Here the cross section is specified in the unit (fm^2) (1[fm^2]= 10[mb])
 
 **[Run 2]** Simulate a 20-30% Pb+Pb collisions at 5.02 TeV
 in our working directory (**`~/JETSCAPE/build`**),
