@@ -207,7 +207,7 @@ cd ~/JETSCAPE/build
 ./hydro_session/collect_results.sh Run_AuAu200_C0-10
 ```
 
-The second command collects all the results into a new folder,
+The last command collects all the results into a new folder,
 `Run_AuAu200_C0-10`.
 
 <img src="figs/CollisionSystem_xml_AuAu200.png" alt="4" width="600"/>
