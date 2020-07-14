@@ -204,8 +204,7 @@ in our working directory (**`~/JETSCAPE/build`**),
 
 ```
 cd ~/JETSCAPE/build
-./runJetscape hydro_session/jetscape_user_AuAu200.xml
-./hydro_session/collect_results.sh Run_AuAu200_C0-10
+./runJetscape hydro_session/jetscape_user_AuAu200.xml; ./hydro_session/collect_results.sh Run_AuAu200_C0-10
 ```
 
 The last command collects all the results into a new folder,
@@ -220,8 +219,8 @@ Here the nucleon-nucleon cross section is specified in the unit (fm^2)
 in our working directory (**`~/JETSCAPE/build`**),
 
 ```
-./runJetscape hydro_session/jetscape_user_PbPb5020.xml
-./hydro_session/collect_results.sh Run_PbPb5020_C20-30
+cd ~/JETSCAPE/build
+./runJetscape hydro_session/jetscape_user_PbPb5020.xml; ./hydro_session/collect_results.sh Run_PbPb5020_C20-30
 ```
 
 <img src="figs/CollisionSystem_xml_PbPb5020.png" alt="4" width="600"/>
@@ -269,10 +268,8 @@ Users can run the JETSCAPE with two example config files,
 
 ```
 cd ~/JETSCAPE/build
-./runJetscape hydro_session/jetscape_user_shear.xml
-./hydro_session/collect_results.sh Run_shear_only
-./runJetscape hydro_session/jetscape_user_shear_and_bulk.xml
-./hydro_session/collect_results.sh Run_shear_and_bulk
+./runJetscape hydro_session/jetscape_user_shear.xml; ./hydro_session/collect_results.sh Run_shear_only
+./runJetscape hydro_session/jetscape_user_shear_and_bulk.xml; ./hydro_session/collect_results.sh Run_shear_and_bulk
 ```
 
 <img src="figs/ViscosityComp_xml.png" alt="4" width="600"/>
@@ -329,8 +326,7 @@ Users can play with settings in `hydro_session/jetscape_user_TempDepVis.xml`.
 
 ```
 cd ~/JETSCAPE/build
-./runJetscape hydro_session/jetscape_user_TempDepVis.xml
-./hydro_session/collect_results.sh Run_TempDepVisc
+./runJetscape hydro_session/jetscape_user_TempDepVis.xml; ./hydro_session/collect_results.sh Run_TempDepVisc
 ```
 
 
