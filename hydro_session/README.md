@@ -198,7 +198,7 @@ one can modify model parameters for the initial state module to simulate
 his/her desired collision system. In between **`<Trento>`** and **`<\Trento>`**,
 we can specify the type of colliding nucleus, collision energy, and centrality.
 
-[Run 1] Simulate a 0-10% Au+Au collision at 200 GeV 
+**[Run 1]** Simulate a 0-10% Au+Au collision at 200 GeV 
 in our working directory (**`~/JETSCAPE/build`**),
 
 ```
@@ -212,7 +212,9 @@ The last command collects all the results into a new folder,
 
 <img src="figs/CollisionSystem_xml_AuAu200.png" alt="4" width="600"/>
 
-[Run 2] Simulate a 20-30% Pb+Pb collisions at 5.02 TeV
+Here the cross section is specified in the unit (fm^2) (1[fm^2]= 0.1[mb])
+
+**[Run 2]** Simulate a 20-30% Pb+Pb collisions at 5.02 TeV
 in our working directory (**`~/JETSCAPE/build`**),
 
 ```
