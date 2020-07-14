@@ -78,4 +78,4 @@ Open the displayed address `http://127.0.0.1:8888/?token=...` in your browser.
 Then please go to the folder `med_res_session`, open `hydro_movie-medium_response.ipynb`, and follow the instructions. 
 
 
-
+## [Bonus] Settings in XML file
