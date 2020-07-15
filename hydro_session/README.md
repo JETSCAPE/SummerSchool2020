@@ -110,7 +110,7 @@ make -j4
 cp -r ../../SummerSchool2020/hydro_session .
 ```
 
-The last command copies the hand-on materials of this session to the working folder.
+The last command copies the hands-on materials of this session to the working folder.
 
 <img src="figs/jetscape-build_folder_content.png" alt="3" width="800"/>
 
