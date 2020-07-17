@@ -1,10 +1,17 @@
 # Medium Excitation by Jets [Hands-on Session]
 
+## 0. 
+
 
 ## 1. Start the Docker Container
 
+If you use ssh, you need to create your ssh session with the following command: 
 
-If you stopped the docker container for Gojko's jet hands-on session, please restart it,
+```
+ssh -L 8888:127.0.0.1:8888 user@server
+```
+
+Then, if you stopped the docker container for Gojko's jet hands-on session, please restart it,
 
 **macOS:**
 ```
@@ -85,8 +92,7 @@ To perform a simulation with hydrodynamic medium response (in `~/JETSCAPE/build`
 If you have already launched any jupyter notebooks, please close them all first! Then, launch jupyter notebook inside the docker contain with the following command, 
 
 ```
-jupyter-notebook --ip 0.0.0.0 --no-browser > notebook.log 2>&1 &
-cat notebook.log
+jupyter-notebook --ip 0.0.0.0 --no-browser
 ```
 Open the displayed address starting with `http://127.0.0.1:8888/?token=...` in your browser. 
 Then please go to the folder `med_res_session`, open `hydro_movie-medium_response.ipynb`, and follow the instructions. 
