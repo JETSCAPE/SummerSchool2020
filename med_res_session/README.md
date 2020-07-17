@@ -5,7 +5,14 @@
 Please make sure you have the following folders in `~/jetscape-docker`,
 
 * JETSCAPE
-* SummerSchool2020/med\_res_session
+* SummerSchool2020
+
+Just in case, please update `~/jetscape-docker/SummerSchool2020`:
+
+```
+cd ~/jetscape-docker/SummerSchool2020
+git pull
+```
 
 ## Start a docker container
 
