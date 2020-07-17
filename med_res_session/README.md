@@ -76,7 +76,7 @@ cd ~/JETSCAPE/build
 ## Visualization with Jupyter Notebook
 
 If you have already launched any jupyter notebooks, please close them all first!
-Launch jupyter notebook inside the docker contain with the following command, 
+Then, launch jupyter notebook inside the docker contain with the following command, 
 
 ```
 jupyter-notebook --ip 0.0.0.0 --no-browser > notebook.log 2>&1 &
