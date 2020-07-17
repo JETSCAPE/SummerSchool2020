@@ -1,7 +1,7 @@
 # Medium Excitation by Jets [Hands-on Session]
 
 
-## 1. Start a docker container
+## 1. Start the Docker Container
 
 
 If you stopped the docker container for Gojko's jet hands-on session, please restart it,
