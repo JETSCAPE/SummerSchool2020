@@ -37,9 +37,9 @@ ssh -L 8888:127.0.0.1:8888 user@server
 The port information is essential to properly setup jupyter notebook.
 
 Before we begin our session, please make sure all the code packages are already
-in the correct place on your computer. You should have a `jetscape-docker` folder
-under your home directory. Try to list the folder inside `jetscape-docker` with
-the following command,
+in the correct place on your computer. You should have a `jetscape-docker`
+folder under your home directory. Try to list the folder inside
+`jetscape-docker` with the following command,
 
 ```
 ls ~/jetscape-docker
@@ -110,12 +110,12 @@ make -j4
 cp -r ../../SummerSchool2020/hydro_session .
 ```
 
-The last command copies the hand-on materials of this session to the working folder.
+The last command copies the hands-on materials of this session to the working folder.
 
 <img src="figs/jetscape-build_folder_content.png" alt="3" width="800"/>
 
 
-## <img src="figs/Goku.png" alt="Goku" width="60"/> A Test Run for JETSCAPE with MUSIC
+## <img src="figs/Goku.png" alt="Goku" width="60"/> 1. A Test Run for JETSCAPE with MUSIC
 
 To perform a test run for JETSCAPE with MUSIC in our working directory
 (**`~/JETSCAPE/build`**),
@@ -154,9 +154,10 @@ you can open your browser and enter the following address,
 
 #### 1. Plot averaged temperature and flow velocity evolution
 
-In your browser, we first go into the `hydro_session` folder *(in your browser)*.
-We can open the notebook `hydro_evo_TestRun.ipynb` by click on it inside
-the browser. Once the notebook is opened, the user can execute every cell
+In your browser, we first go into the `hydro_session` folder
+*(in your browser)*. We can open the notebook `hydro_evo_TestRun.ipynb`
+by click on it inside the browser.
+Once the notebook is opened, the user can execute every cell
 in this notebook one-by-one. Press **`shift+enter`** to execute the cell block
 in the notebook.
 
@@ -185,7 +186,7 @@ python3 hydro_movie-TestRun.py
 ```
 <img src="figs/TestRun_results.png" alt="4" width="800"/>
 
-## <img src="figs/SSJ.gif" alt="SSJ" width="120"/> Change the collision systems
+## <img src="figs/SSJ.gif" alt="SSJ" width="120"/> 2. Change the collision systems
 
 The users can specify the types of collision systems in JETSCAPE xml file,
 
@@ -203,8 +204,7 @@ in our working directory (**`~/JETSCAPE/build`**),
 
 ```
 cd ~/JETSCAPE/build
-./runJetscape hydro_session/jetscape_user_AuAu200.xml
-./hydro_session/collect_results.sh Run_AuAu200_C0-10
+./runJetscape hydro_session/jetscape_user_AuAu200.xml; ./hydro_session/collect_results.sh Run_AuAu200_C0-10
 ```
 
 The last command collects all the results into a new folder,
@@ -219,8 +219,8 @@ Here the nucleon-nucleon cross section is specified in the unit (fm^2)
 in our working directory (**`~/JETSCAPE/build`**),
 
 ```
-./runJetscape hydro_session/jetscape_user_PbPb5020.xml
-./hydro_session/collect_results.sh Run_PbPb5020_C20-30
+cd ~/JETSCAPE/build
+./runJetscape hydro_session/jetscape_user_PbPb5020.xml; ./hydro_session/collect_results.sh Run_PbPb5020_C20-30
 ```
 
 <img src="figs/CollisionSystem_xml_PbPb5020.png" alt="4" width="600"/>
@@ -238,7 +238,7 @@ The results plots can be found in the `hydro_session` folder,
 
 <img src="figs/CollisionSystem_results.png" alt="4" width="800"/>
 
-## <img src="figs/SSJB.gif" alt="SSJB" width="120"/> Study the effects of viscosity in hydrodynamic evolution
+## <img src="figs/SSJB.gif" alt="SSJB" width="120"/> 3. Study the effects of viscosity in hydrodynamic evolution
 
 * Specific shear viscosity ![formula](https://render.githubusercontent.com/render/math?math=\eta/s)
 * Specific bulk viscosity ![formula](https://render.githubusercontent.com/render/math?math=\zeta/s)
@@ -268,10 +268,8 @@ Users can run the JETSCAPE with two example config files,
 
 ```
 cd ~/JETSCAPE/build
-./runJetscape hydro_session/jetscape_user_shear.xml
-./hydro_session/collect_results.sh Run_shear_only
-./runJetscape hydro_session/jetscape_user_shear_and_bulk.xml
-./hydro_session/collect_results.sh Run_shear_and_bulk
+./runJetscape hydro_session/jetscape_user_shear.xml; ./hydro_session/collect_results.sh Run_shear_only
+./runJetscape hydro_session/jetscape_user_shear_and_bulk.xml; ./hydro_session/collect_results.sh Run_shear_and_bulk
 ```
 
 <img src="figs/ViscosityComp_xml.png" alt="4" width="600"/>
@@ -285,7 +283,7 @@ The resulting plots can be found under the `hydro_session` folder.
 
 <img src="figs/ViscosityComp_results.png" alt="4" width="800"/> 
 
-## <img src="figs/UltraInstinct.gif" alt="UI" width="140"/> Temperature dependent $(\eta/s)(T)$ and $(\zeta/s)(T)$
+## <img src="figs/UltraInstinct.gif" alt="UI" width="140"/> 4. Temperature dependent $(\eta/s)(T)$ and $(\zeta/s)(T)$
 
 One can further try a temperature-dependent $(\eta/s)(T)$ by setting
 the variable `<T_dependent_Shear_to_S_ratio>` to **3**. Once this parameter
@@ -300,6 +298,9 @@ ineffective. The users need to further specify the following four parameters,
 to characterize the temperature dependence of
 ![formula](https://render.githubusercontent.com/render/math?math=(\eta/s)(T)).
 
+<img src="figs/eta_over_s_T.png" alt="4" width="400"/> 
+
+
 Siimilar to the case for $(\eta/s)(T)$, the uses can set the parameter
 `<temperature_dependent_bulk_viscosity>` to **3** in the xml file to include
 a temperature dependent $(\zeta/s)(T)$.
@@ -313,6 +314,10 @@ They are as follows,
     3. <zeta_over_s_width_in_GeV>
     4. <zeta_over_s_lambda_asymm>
 
+The parameterization is
+
+<img src="figs/zeta_over_s_T.png" alt="4" width="400"/> 
+
 <img src="figs/TempVis_vis.png" alt="4" width="600"/> 
 
 Users can play with settings in `hydro_session/jetscape_user_TempDepVis.xml`.
@@ -321,8 +326,7 @@ Users can play with settings in `hydro_session/jetscape_user_TempDepVis.xml`.
 
 ```
 cd ~/JETSCAPE/build
-./runJetscape hydro_session/jetscape_user_TempDepVis.xml
-./hydro_session/collect_results.sh Run_TempDepVisc
+./runJetscape hydro_session/jetscape_user_TempDepVis.xml; ./hydro_session/collect_results.sh Run_TempDepVisc
 ```
 
 
@@ -385,7 +389,7 @@ This file contains the evolution history of fluid cells above T = 130 MeV.
 Every fluid cell includes the following information:
 `itau  ix  iy  ieta  volume[fm^4]  e[GeV/fm^3]  rho_B[1/fm^3]  T[GeV]  mu_B[GeV]  u^x  u^y \tau*u^\eta  T^{\tau t}[GeV/fm^3]  J^\tau[1/fm^3]` 
 
-## [Bonus] Produce hadrons from hydrodynamics
+## [Bonus] 5. Produce hadrons from hydrodynamics
 
 In JETSCAPE, a third-party particle sampler iSpectraSampler (iSS) is employed
 to convert fluid cells to particles. The iSS produces Monte-Carlo particles
