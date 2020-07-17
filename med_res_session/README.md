@@ -6,20 +6,6 @@
 
 If you stopped the docker container for Gojko's jet hands-on session, please restart it,
 
-* JETSCAPE
-* SummerSchool2020
-
-Just in case, please update `~/jetscape-docker/SummerSchool2020`:
-
-```
-cd ~/jetscape-docker/SummerSchool2020
-git pull
-```
-
-## Start a docker container
-
-Start the JETSCAPE docker container,
-
 **macOS:**
 ```
 docker run -it -v ~/MATTER_LBT_result:/home/jetscape-user/JETSCAPE/MATTER_LBT_results -p 8888:8888 gvujan/jetscape-school:latest
@@ -95,12 +81,8 @@ To perform a simulation with hydrodynamic medium response (in `~/JETSCAPE/build`
 
 
 ## 4. Visualization with Jupyter Notebook
+
 If you have already launched any jupyter notebooks, please close them all first! Then, launch jupyter notebook inside the docker contain with the following command, 
-
-## Visualization with Jupyter Notebook
-
-If you have already launched any jupyter notebooks, please close them all first!
-Then, launch jupyter notebook inside the docker contain with the following command, 
 
 ```
 jupyter-notebook --ip 0.0.0.0 --no-browser > notebook.log 2>&1 &
