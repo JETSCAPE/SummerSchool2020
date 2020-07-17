@@ -65,7 +65,7 @@
           <dtau>0.02</dtau><!-- fluid time step in [fm] -->
           <dx>0.3</dx><!-- fluid cell size in [fm] -->
           <dy>0.3</dy><!-- fluid cell size in [fm] -->
-          <deta>5</deta><!-- fluid cell size -->
+          <deta>0.2</deta><!-- fluid cell size -->
           <tau_delay>2.0</tau_delay><!-- in [fm] -->
           <time_relax>0.1</time_relax><!-- in [fm] -->
           <d_diff>0.08</d_diff><!-- in [fm] -->
