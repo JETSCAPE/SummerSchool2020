@@ -12,9 +12,17 @@ ssh -L 8888:127.0.0.1:8888 user@server
 
 Then, if you stopped the docker container for Gojko's jet hands-on session, please restart it,
 
+For MacOS
 ```
+docker run -it -v ~/MATTER_LBT_results:/home/jetscape-user/JETSCAPE/MATTER_LBT_results -p 8888:8888 gvujan/jetscape-school:latest
+```
+
+For Linux
+```
+docker pull gvujan/jetscape-school:latest
 docker run -it -v ~/MATTER_LBT_results:/home/jetscape-user/JETSCAPE/MATTER_LBT_results -p 8888:8888 --user $(id -u):$(id -g) gvujan/jetscape-school:latest
 ```
+
 
 The option `-p 8888:8888` is necessary to creates a port to access the jupyter notebook, which we use in this hands-on session, from your local web browser.
 
