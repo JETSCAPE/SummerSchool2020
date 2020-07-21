@@ -9,10 +9,10 @@ We provided two options to either install the dependencies using [Anaconda](http
 
 1. Download and install `Conda`
 
-    1.1. Download `Miniconda` (a free minimal version of Anaconda) for Python 3.7 from [here](https://docs.conda.io/en/latest/miniconda.html). Remember to choose `Python3` (3.7) and the corrected installer for your operating system.
+    1.1. Download `Miniconda` (a free minimal version of Anaconda) for Python 3.7 from [here](https://docs.conda.io/en/latest/miniconda.html). Remember to choose `Python3` (3.7) and the corrected installer for your operating system and architecture (for my system which is Linux x86_64, the installer that I downloadeded is `Miniconda3-latest-Linux-x86_64.sh`). 
 
-    1.2. Execute the downloaded installer, and follow the instructions to install.
-It will ask you where to put conda (Default is `$HOME`). After the installation, `conda` command can be called in shell (for Mac / Linux). For Windows, you can find `anaconda prompt` from your start menu to open a shell environment.
+    1.2. Execute the downloaded installer (for example on Linux, `sudo bash <name-of-the-installation-script>`), and follow the instructions to install.
+It will ask you where to put conda (Default is `$HOME/` by press `Enter`). After the installation, `conda` command can be called in shell (for Mac / Linux). For Windows, you can find `anaconda prompt` from your start menu to open a shell environment.
 
 2. Clone the repository and download data files
 
