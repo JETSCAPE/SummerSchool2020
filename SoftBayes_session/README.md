@@ -21,7 +21,7 @@ It will ask you where to put conda (Default is `$HOME`). After the installation,
     mkdir $HOME/JS2020 && cd $HOME/JS2020 git clone https://github.com/keweiyao/JETSCAPE2020-TRENTO-BAYES.git 
     ```
 
-    2.2. Using the script `postBuild` to down the data  
+    2.2. Using the script `postBuild` to down the data. Note that this script uses `wget` to download the data file. (On Mac, you may need to do `brew install wget` to intall `wget`, or you can simply go to [here](https://webhome.phy.duke.edu/~wk42/jetscape/data.tar.gz) to download the `data.tar.gz` and unzip to the working directory)
     ```
     cd <path-to-code-folder>
     bash postBuild 
